@@ -1,0 +1,20 @@
+{
+	"printWidth": 140,
+	"singleQuote": true,
+	"trailingComma": "none",
+	"useTabs": true,
+	"overrides": [
+		{
+			"files": "*.html",
+			"options": {
+				"bracketSameLine": true
+			}
+		},
+		{
+			"files": "*.scss",
+			"options": {
+				"singleQuote": false
+			}
+		}
+	]
+}

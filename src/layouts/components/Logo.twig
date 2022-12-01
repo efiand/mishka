@@ -1,3 +1,5 @@
-<a class="Logo {{ bemMix }}" {{ rootPath ? 'href="' ~ rootPath ~ 'index.html"' : 'aria-current="page"' }}>
+{% set linkAttributes = page == 'index' ? 'aria-current="page"' : 'href="' ~ rootPath ~ 'index.html"' %}
+
+<a class="Logo {{ bemMix }}" {{ linkAttributes }}>
 	{% include 'Picture.twig' with logo|merge({ bemMix: 'Logo__picture' }) %}
 </a>

@@ -15,6 +15,10 @@
 		{% include '../components/PageHeader.twig' %}
 
 		<main>
+			{% if pageHeading %}
+				{% include '../components/MainHeader.twig' with pageHeading %}
+			{% endif %}
+
 			{% block main %}{% endblock %}
 		</main>
 

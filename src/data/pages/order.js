@@ -1,4 +1,4 @@
-import { punctify } from '../scripts/common/utils.js';
+import { punctify } from '../../scripts/common/utils.js';
 
 const slogan = 'Милые штуки ручной работы для дома';
 

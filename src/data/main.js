@@ -1,14 +1,10 @@
 import { Breakpoint } from '../scripts/common/constants.js';
+import { getImages } from './common/utils.js';
 
 export default () => ({
 	Breakpoint,
 	bonusText: 'Бесплатная доставка по России',
-	logo: {
-		alt: 'Логотип компании.',
-		default: 'images/logo-mishka.svg',
-		mobile: 'images/logo-mishka-mobile.svg',
-		tablet: 'images/logo-mishka-tablet.svg'
-	},
+	logo: getImages({ additions: { alt: 'Логотип компании.' }, file: 'logo-mishka.svg' }),
 	navigation: [
 		{
 			alias: 'main',

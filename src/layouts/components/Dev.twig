@@ -1,0 +1,7 @@
+<p class="Dev {{ bemMix }}">
+	{{ text }}
+
+	<a class="Dev__link" href="{{ url }}">
+		{% include 'Picture.twig' with logo|merge({ bemMix: 'Dev__picture' }) %}
+	</a>
+</p>

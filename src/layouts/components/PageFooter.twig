@@ -1,1 +1,5 @@
-<footer class="PageFooter"></footer>
+<footer class="PageFooter">
+	{% include 'Socials.twig' with { bemMix: 'PageFooter__socials', socials } %}
+
+	{% include 'Dev.twig' with devData|merge({ bemMix: 'PageFooter__dev' }) %}
+</footer>

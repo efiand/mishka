@@ -1,0 +1,17 @@
+<section class="Contacts">
+	<h2 class="Contacts__heading Heading">{{ heading }}</h2>
+
+	<dl class="Contacts__details">
+		{% for detail in details %}
+			<div class="Contacts__detail">
+				<dt class="Contacts__key">{{ detail.key }}:</dt>
+				<dd class="Contacts__value">{{ detail.value }}</dd>
+			</div>
+		{% endfor %}
+	</dl>
+
+
+	{% include 'Map.twig' with { bemMix: 'Contacts__map', mapSet } %}
+
+	<a class="Contacts__button Button" href="{{ link.url }}">{{ link.title }}</a>
+</section>

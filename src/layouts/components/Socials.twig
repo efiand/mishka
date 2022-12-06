@@ -1,0 +1,9 @@
+<ul class="Socials {{ bemMix }}">
+	{% for link in socials %}
+		<li>
+			<a class="Socials__link" href="{{ link.url }}" style="--icon: url('../images/icons.svg#{{ link.alias }}')">
+				<span class="visuallyHidden">{{ link.title|punctify }}</span>
+			</a>
+		</li>
+	{% endfor %}
+</ul>

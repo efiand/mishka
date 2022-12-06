@@ -1,6 +1,6 @@
 export { punctify } from '../../scripts/common/utils.js';
 
-export const getImages = ({ alt = null, file, height = null, width = null } = {}) => {
+export const getImages = (file, { adaptive = false, alt = null, height = null, width = null } = {}) => {
 	const [[, filename, ext]] = [...file.matchAll(/([^.]*)\.([^.]*)/g)];
 	const isRaster = ext !== 'svg';
 
@@ -23,7 +23,7 @@ export const getImages = ({ alt = null, file, height = null, width = null } = {}
 		}
 	}
 
-	if (!width || !height) {
+	if (!image.width && adaptive) {
 		image.tablet = `images/${filename}-tablet.${ext}`;
 		image.desktop = `images/${filename}-desktop.${ext}`;
 

@@ -1,0 +1,11 @@
+<section class="IconableList">
+	<h2 class="IconableList__heading Heading">{{ heading }}</h2>
+
+	<ul class="IconableList__list">
+		{% for item in list %}
+			<li class="IconableList__item IconableList__item_{{ item.icon }}" style="--icon: url('../images/icons.svg#{{ item.icon }}')">
+				{{ item.text }}
+			</li>
+		{% endfor %}
+	</ul>
+</section>

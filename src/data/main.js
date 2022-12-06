@@ -4,7 +4,12 @@ import { getImages } from './common/utils.js';
 export default () => ({
 	Breakpoint,
 	bonusText: 'Бесплатная доставка по России',
-	logo: getImages({ alt: 'Логотип компании', file: 'logo-mishka.svg' }),
+	devData: {
+		logo: getImages('logo-htmlacademy.svg', { alt: 'Логотип HTML Academy', height: 35, width: 27 }),
+		text: 'Разработано',
+		url: 'https://htmlacademy.ru/intensive/adaptive'
+	},
+	logo: getImages('logo-mishka.svg', { adaptive: true, alt: 'Логотип компании' }),
 	navigation: [
 		{
 			alias: 'main',
@@ -48,5 +53,22 @@ export default () => ({
 			]
 		}
 	],
-	project: 'Mishka'
+	project: 'Mishka',
+	socials: [
+		{
+			alias: 'vk',
+			title: 'Мы во ВКонтакте',
+			url: '#!'
+		},
+		{
+			alias: 'youtube',
+			title: 'Мы в Youtube',
+			url: '#!'
+		},
+		{
+			alias: 'telegram',
+			title: 'Мы в Telegram',
+			url: '#!'
+		}
+	]
 });

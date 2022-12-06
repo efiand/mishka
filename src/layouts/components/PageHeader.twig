@@ -5,8 +5,8 @@
 		<ul class="PageHeader__menu PageHeader__menu_{{ menu.alias }}">
 			{% for link in menu.list %}
 				<li>
-					{% set linkModifier = link.icon ? 'PageHeader__link_iconable PageHeader__link_icon_' ~ link.icon %}
-					<a class="PageHeader__link {{ linkModifier }}" href="{{ link.url }}">
+					{% set linkIcon = link.icon ? 'style="--icon: url(\'../images/icons.svg#' ~ link.icon ~ '\')"' %}
+					<a class="PageHeader__link {{ link.icon ? 'PageHeader__link_iconable' }}" href="{{ link.url }}" {{ linkIcon }}>
 						{{ link.title}}
 					</a>
 				</li>

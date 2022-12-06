@@ -3,6 +3,7 @@ import { getImages } from './common/utils.js';
 
 export default () => ({
 	Breakpoint,
+	action: 'https://echo.htmlacademy.ru',
 	bonusText: 'Бесплатная доставка по России',
 	devData: {
 		logo: getImages('logo-htmlacademy.svg', { alt: 'Логотип HTML Academy', height: 35, width: 27 }),
@@ -53,7 +54,15 @@ export default () => ({
 			]
 		}
 	],
+	orderForm: {
+		heading: 'Добавить в корзину',
+		name: 'size',
+		submitText: 'Добавить',
+		title: 'Выберите размер:',
+		values: ['s', 'm', 'l']
+	},
 	project: 'Mishka',
+	slogan: 'Милые штуки ручной работы для дома',
 	socials: [
 		{
 			alias: 'vk',

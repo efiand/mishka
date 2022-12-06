@@ -1,8 +1,15 @@
-import { punctify } from '../../scripts/common/utils.js';
+import { punctify } from '../common/utils.js';
 
-const slogan = 'Милые штуки ручной работы для дома';
+const title = 'Вязание на заказ';
+const slogan = 'Мы будем рады воплотить в жизнь ваши пожелания!';
 
 export default ({ project }) => ({
 	description: `${punctify(project)} ${slogan}`,
-	slogan
+	form: {
+		prepend: `${slogan} Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.`
+	},
+	pageHeading: {
+		title
+	},
+	title
 });

@@ -1,0 +1,28 @@
+<form class="FormSelect" action="{{ action }}" method="{{ method ?? 'get' }}">
+	<h2 class="FormSelect__heading">{{ heading }}</h2>
+
+	<input type="hidden" name="id" value="{{ goodId }}">
+
+	<fieldset class="FormSelect__container">
+		<legend class="FormSelect__titleg">{{ title }}</legend>
+
+		<p class="FormSelect__group">
+			{% for value in values %}
+				{% set id = name ~ goodId ~ loop.index %}
+
+				<input
+					class="visuallyHidden"
+					id="{{ id }}"
+					type="{{ type ?? 'radio' }}"
+					name="{{ name }}"
+					value="{{ value }}"
+				/>
+				<label class="FormSelect__button" for="{{ id }}">
+					{{ value }}
+				</label>
+			{% endfor %}
+		</p>
+	</fieldset>
+
+	<button class="FormSelect__submit" type="submit">{{ submitText }}</button>
+</form>

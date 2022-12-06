@@ -9,3 +9,11 @@
 
 	{% include '../components/Contacts.twig' with contacts %}
 {% endblock %}
+
+{% block modal %}
+	{% include '../components/Modal.twig' with {
+		component: 'FormSelect',
+		data: orderForm|merge({ goodId: weekGood.id }),
+		modalId: weekGood.id
+	} %}
+{% endblock %}

@@ -20,6 +20,8 @@
 
 		<p class="GoodSection__price">{{ price }}</p>
 
-		<a class="GoodSection__button Button" href="{{ link.url }}">{{ link.title }}</a>
+		<a class="GoodSection__button Button" href="{{ link.url }}" data-modal-open="{{ id }}">
+			{{ link.title }}
+		</a>
 	</div>
 </section>

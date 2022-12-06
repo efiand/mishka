@@ -39,3 +39,17 @@ export const getImages = (file, { adaptive = false, alt = null, height = null, w
 
 	return image;
 };
+
+export const mapGood = (adaptive = false) => (good, i) => {
+	const id = i + 1;
+
+	return {
+		...good,
+		id,
+		imageSet: getImages(`good-${id}.jpg`, { adaptive, alt: `Изображение товара «${good.heading}»` }),
+		link: {
+			title: 'Заказать',
+			url: '#!'
+		}
+	};
+};

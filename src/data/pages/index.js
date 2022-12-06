@@ -1,6 +1,8 @@
-import { getImages, punctify } from '../common/utils.js';
+import { getImages, mapGood, punctify } from '../common/utils.js';
 
-export default ({ bonusText, project }) => ({
+const GOOD_INDEX = 3;
+
+export default ({ bonusText, project, slogan }) => ({
 	advantages: {
 		heading: 'Коротко о нас:',
 		list: [
@@ -31,7 +33,7 @@ export default ({ bonusText, project }) => ({
 			{ icon: 'interior', title: 'Предметы интерьера', url: '#!' },
 			{ icon: 'lego', title: 'Детские игрушки', url: '#!' }
 		],
-		title: 'Милые штуки ручной работы для дома'
+		title: slogan
 	},
 	reviews: {
 		backgroundSet: getImages('bg-reviews.jpg'),
@@ -69,7 +71,7 @@ export default ({ bonusText, project }) => ({
 			}
 		]
 	},
-	weekGood: {
+	weekGood: mapGood()({
 		description: 'Экологически чистая пряжа, ручная работа. Доступны в шести расцветках и трёх размерах.',
 		details: [
 			{ key: 'Цвет', value: 'тиффани/серый' },
@@ -77,12 +79,7 @@ export default ({ bonusText, project }) => ({
 			{ key: 'Высота', value: '15 см' }
 		],
 		heading: 'Вязаные корзинки',
-		imageSet: getImages('baskets.jpg', { alt: 'Набор вязаных корзинок.' }),
 		label: 'Товар недели',
-		link: {
-			title: 'Заказать',
-			url: '#!'
-		},
 		price: 'Цена: 990 руб.'
-	}
+	}, GOOD_INDEX)
 });

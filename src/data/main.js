@@ -4,18 +4,18 @@ import { getImages } from './common/utils.js';
 export default () => ({
 	Breakpoint,
 	bonusText: 'Бесплатная доставка по России',
-	logo: getImages({ additions: { alt: 'Логотип компании.' }, file: 'logo-mishka.svg' }),
+	logo: getImages({ alt: 'Логотип компании', file: 'logo-mishka.svg' }),
 	navigation: [
 		{
 			alias: 'main',
 			list: [
 				{
-					href: 'catalog.html',
-					title: 'Каталог товаров'
+					title: 'Каталог товаров',
+					url: 'catalog.html'
 				},
 				{
-					href: 'order.html',
-					title: 'Вязание на заказ'
+					title: 'Вязание на заказ',
+					url: 'order.html'
 				}
 			]
 		},
@@ -23,14 +23,14 @@ export default () => ({
 			alias: 'services',
 			list: [
 				{
-					href: '#!',
 					icon: 'search',
-					title: 'Поиск по сайту'
+					title: 'Поиск по сайту',
+					url: '#!'
 				},
 				{
-					href: '#!',
 					icon: 'cart',
-					title: 'Корзина: пока пуста'
+					title: 'Корзина: пока пуста',
+					url: '#!'
 				}
 			]
 		},
@@ -38,12 +38,12 @@ export default () => ({
 			alias: 'additions',
 			list: [
 				{
-					href: '#!',
-					title: 'Новые поступления'
+					title: 'Новые поступления',
+					url: '#!'
 				},
 				{
-					href: '#!',
-					title: 'Распродажа'
+					title: 'Распродажа',
+					url: '#!'
 				}
 			]
 		}

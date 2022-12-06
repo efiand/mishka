@@ -1,0 +1,7 @@
+<ul class="PromoLinks">
+	{% for link in promoLinks %}
+		<li>
+			<a class="PromoLinks__link PromoLinks__link_{{ link.icon }}" href="{{ link.url }}">{{ link.title }}</a>
+		</li>
+	{% endfor %}
+</ul>

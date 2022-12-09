@@ -1,0 +1,27 @@
+<section class="GoodSection">
+	<header class="GoodSection__header">
+		<h2 class="GoodSection__heading Heading">{{ heading }}</h2>
+		<p class="GoodSection__label">{{ label }}</p>
+	</header>
+
+	<div class="GoodSection__body">
+		<p class="GoodSection__description">{{ description }}</p>
+
+		<dl class="GoodSection__details">
+			{% for detail in details %}
+				<div class="GoodSection__detail">
+					<dt class="GoodSection__key">{{ detail.key }}:</dt>
+					<dd class="GoodSection__value">{{ detail.value }}</dd>
+				</div>
+			{% endfor %}
+		</dl>
+
+		{% include component('Picture') with imageSet|merge({ bemMix: 'GoodSection__picture' }) %}
+
+		<p class="GoodSection__price">{{ price }}</p>
+
+		<a class="GoodSection__button Button" href="{{ link.url }}" data-modal-open="{{ id }}">
+			{{ link.title }}
+		</a>
+	</div>
+</section>

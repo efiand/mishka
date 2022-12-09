@@ -1,0 +1,7 @@
+<header class="MainHeader {{ backgroundSet ? 'MainHeader_promo' }}" {{ backgroundSet ? setBg(backgroundSet) }}>
+	<h1 class="MainHeader__title">{{ title }}</h1>
+
+	{% if promoLinks %}
+		{% include component('PromoLinks') with { bemMix: 'MainHeader__promoLinks', promoLinks } %}
+	{% endif %}
+</header>

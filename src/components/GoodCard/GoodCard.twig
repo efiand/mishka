@@ -1,0 +1,24 @@
+<article class="GoodCard {{ bemMix }}">
+	{% include component('Picture') with imageSet|merge({ bemMix: 'GoodCard__picture' }) %}
+
+	<div class="GoodCard__body">
+		<h3 class="GoodCard__heading Heading">{{ heading }}</h3>
+
+		<dl class="GoodCard__details">
+			{% for detail in details %}
+				<div class="GoodCard__detail">
+					<dt class="GoodCard__key">{{ detail.key }}</dt>
+					<dd class="GoodCard__value">{{ detail.value ~ (not loop.last ? ',') }}</dd>
+				</div>
+			{% endfor %}
+		</dl>
+
+		<footer class="GoodCard__footer">
+			<p class="GoodCard__price">{{ price }}</p>
+
+			<a class="GoodCard__button" href="{{ link.url }}" data-modal-open="{{ id }}">
+				<span class="visuallyHidden">{{ link.title|punctify }}</span>
+			</a>
+		</footer>
+	</div>
+</article>

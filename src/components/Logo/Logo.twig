@@ -1,0 +1,5 @@
+{% set linkAttributes = page == 'index' ? 'aria-current="page"' : 'href="' ~ rootPath ~ 'index.html"' %}
+
+<a class="Logo {{ bemMix }}" {{ linkAttributes }}>
+	{% include component('Picture') with logo|merge({ bemMix: 'Logo__picture' }) %}
+</a>

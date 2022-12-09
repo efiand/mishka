@@ -1,0 +1,19 @@
+{% extends body %}
+
+{% block main %}
+	{% include component('~GoodSection') with weekGood %}
+
+	{% include component('~IconableList') with advantages %}
+
+	{% include component('~Reviews') with reviews %}
+
+	{% include component('~Contacts') with contacts %}
+{% endblock %}
+
+{% block modal %}
+	{% include component('~Modal') with {
+		Component: 'FormSelect',
+		data: orderForm|merge({ goodId: weekGood.id }),
+		modalId: weekGood.id
+	} %}
+{% endblock %}

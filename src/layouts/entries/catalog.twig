@@ -1,0 +1,17 @@
+{% extends body %}
+
+{% block main %}
+	{% include component('~Goods') with goods %}
+
+	{% include component('~VideoCard') with process %}
+{% endblock %}
+
+{% block modal %}
+	{% for good in goods.list %}
+		{% include component('~Modal') with {
+			Component: 'FormSelect',
+			data: orderForm|merge({ goodId: good.id }),
+			modalId: good.id
+		} %}
+	{% endfor %}
+{% endblock %}

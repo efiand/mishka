@@ -1,0 +1,7 @@
+<p class="Dev {{ bemMix }}">
+	{{ text }}
+
+	<a class="Dev__link" href="{{ url }}">
+		{% include component('Picture') with logo|merge({ bemMix: 'Dev__picture' }) %}
+	</a>
+</p>

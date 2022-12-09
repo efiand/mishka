@@ -1,0 +1,5 @@
+<footer class="PageFooter">
+	{% include component('Socials') with { bemMix: 'PageFooter__socials', socials } %}
+
+	{% include component('Dev') with devData|merge({ bemMix: 'PageFooter__dev' }) %}
+</footer>

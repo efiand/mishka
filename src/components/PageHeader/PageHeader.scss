@@ -1,3 +1,33 @@
 .PageHeader {
-	@include container;
+	position: relative;
+
+	@include vpTabletDesktop {
+		@include container;
+	}
+}
+
+.PageHeader__toggler {
+	position: absolute;
+	top: 29px;
+	right: 31px;
+	display: flex;
+	width: 21px;
+	height: 20px;
+	padding: 0;
+
+	@include button;
+
+	&::before {
+		content: "";
+		width: 20px;
+		height: 14px;
+		margin: auto;
+		background-color: $colorAubergine;
+
+		@include mask("menu");
+	}
+}
+
+.PageHeader__togglerText {
+	@include visuallyHidden;
 }

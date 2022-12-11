@@ -15,4 +15,12 @@
 	{% endfor %}
 
 	<p class="PageHeader__description">{{ bonusText }}</p>
+
+	<button class="PageHeader__toggler" type="button">
+		{% for key in togglerText|keys %}
+			<span class="PageHeader__togglerText PageHeader__togglerText_{{ key }}">
+				{{ togglerText[key]|punctify }}
+			</span>
+		{% endfor %}
+	</button>
 </header>

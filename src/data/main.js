@@ -89,5 +89,9 @@ export default () => ({
 			title: 'Мы в Telegram',
 			url: '#!'
 		}
-	]
+	],
+	togglerText: {
+		close: 'Закрыть меню',
+		open: 'Открыть меню'
+	}
 });

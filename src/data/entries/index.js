@@ -1,6 +1,22 @@
-import { getImages, mapGood, punctify } from '../utils.js';
+import { mapGood, punctify } from '../utils.js';
 
 const GOOD_INDEX = 3;
+
+const weekGood = mapGood(
+	{
+		description: 'Экологически чистая пряжа, ручная работа. Доступны в шести расцветках и трёх размерах.',
+		details: [
+			{ key: 'Цвет', value: 'тиффани/серый' },
+			{ key: 'Диаметр', value: '25 см' },
+			{ key: 'Высота', value: '15 см' }
+		],
+		heading: 'Вязаные корзинки',
+		label: 'Товар недели',
+		price: 'Цена: 990 руб.'
+	},
+	GOOD_INDEX
+);
+weekGood.imageSet.adaptive = false;
 
 export default ({ bonusText, project, slogan }) => ({
 	advantages: {
@@ -24,11 +40,18 @@ export default ({ bonusText, project, slogan }) => ({
 			title: 'Напишите нам',
 			url: '#!'
 		},
-		mapSet: getImages('map.jpg', { alt: 'Наш адрес на карте' })
+		mapSet: {
+			alt: 'Наш адрес на карте',
+			filename: 'map',
+			height: 457,
+			width: 768
+		}
 	},
 	description: `${punctify(project)} ${bonusText}`,
 	pageHeading: {
-		backgroundSet: getImages('main-header.jpg'),
+		backgroundSet: {
+			filename: 'main-header'
+		},
 		promoLinks: [
 			{ icon: 'interior', title: 'Предметы интерьера', url: '#!' },
 			{ icon: 'lego', title: 'Детские игрушки', url: '#!' }
@@ -36,7 +59,9 @@ export default ({ bonusText, project, slogan }) => ({
 		title: slogan
 	},
 	reviews: {
-		backgroundSet: getImages('bg-reviews.jpg'),
+		backgroundSet: {
+			filename: 'bg-reviews'
+		},
 		controls: [
 			{
 				alias: 'prev',
@@ -71,15 +96,5 @@ export default ({ bonusText, project, slogan }) => ({
 			}
 		]
 	},
-	weekGood: mapGood()({
-		description: 'Экологически чистая пряжа, ручная работа. Доступны в шести расцветках и трёх размерах.',
-		details: [
-			{ key: 'Цвет', value: 'тиффани/серый' },
-			{ key: 'Диаметр', value: '25 см' },
-			{ key: 'Высота', value: '15 см' }
-		],
-		heading: 'Вязаные корзинки',
-		label: 'Товар недели',
-		price: 'Цена: 990 руб.'
-	}, GOOD_INDEX)
+	weekGood
 });

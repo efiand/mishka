@@ -31,7 +31,7 @@ export default ({ project, slogan }) => ({
 				heading: 'Большая корзинка для игрушек',
 				price: '1500 руб.'
 			}
-		].map(mapGood(true))
+		].map(mapGood)
 	},
 	pageHeading: {
 		title

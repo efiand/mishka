@@ -1,16 +1,26 @@
 import { Breakpoint } from '../scripts/constants.js';
-import { getImages } from './utils.js';
 
 export default () => ({
 	Breakpoint,
 	action: 'https://echo.htmlacademy.ru',
 	bonusText: 'Бесплатная доставка по России',
 	devData: {
-		logo: getImages('logo-htmlacademy.svg', { alt: 'Логотип HTML Academy', height: 35, width: 27 }),
+		logo: {
+			alt: 'Логотип HTML Academy',
+			ext: 'svg',
+			filename: 'logo-htmlacademy',
+			height: 35,
+			width: 27
+		},
 		text: 'Разработано',
 		url: 'https://htmlacademy.ru/intensive/adaptive'
 	},
-	logo: getImages('logo-mishka.svg', { adaptive: true, alt: 'Логотип компании' }),
+	logo: {
+		adaptive: true,
+		alt: 'Логотип компании',
+		ext: 'svg',
+		filename: 'logo-mishka'
+	},
 	navigation: [
 		{
 			alias: 'main',

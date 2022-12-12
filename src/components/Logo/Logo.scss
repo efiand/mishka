@@ -1,4 +1,9 @@
-.Logo__picture {
+.Logo {
 	display: table;
 	margin: 0 auto;
+	padding: 22px;
+}
+
+.Logo__picture {
+	display: block;
 }

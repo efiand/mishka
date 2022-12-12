@@ -6,6 +6,24 @@
 	}
 }
 
+.PageHeader__menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	&_additions {
+		@include vpMobile {
+			display: none;
+		}
+	}
+}
+
+.PageHeader__link {
+	display: block;
+	text-decoration: none;
+	text-align: center;
+}
+
 .PageHeader__toggler {
 	position: absolute;
 	top: 29px;
@@ -16,6 +34,10 @@
 	padding: 0;
 
 	@include button;
+
+	@include vpTabletDesktop {
+		display: none;
+	}
 
 	&::before {
 		content: "";
@@ -30,4 +52,27 @@
 
 .PageHeader__togglerText {
 	@include visuallyHidden;
+
+	&_close {
+		display: none;
+	}
+}
+
+.PageHeader_open {
+	.PageHeader__toggler::before {
+		width: 21px;
+		height: 20px;
+
+		@include mask("close");
+	}
+
+	.PageHeader__togglerText {
+		&_close {
+			display: block;
+		}
+
+		&_open {
+			display: none;
+		}
+	}
 }

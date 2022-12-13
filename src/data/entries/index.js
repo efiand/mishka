@@ -22,12 +22,12 @@ export default ({ bonusText, project }) => ({
 	advantages: {
 		heading: 'Коротко о нас:',
 		list: [
-			{ icon: 'eco', text: 'Экологически чистые материалы' },
-			{ icon: 'handmade', text: 'Связано вручную с любовью и умилением' },
-			{ icon: 'banknote', text: 'Скандинавский стиль по российской цене' },
+			{ icon: 'eco', text: 'Экологически чистые&nbsp;материалы' },
+			{ icon: 'banknote', text: 'Скандинавский стиль по&nbsp;российской цене' },
+			{ icon: 'heart', text: 'Увеличивает лайки на&nbsp;фотографиях' },
+			{ icon: 'handmade', text: 'Связано вручную с&nbsp;любовью&nbsp;и&nbsp;умилением' },
 			{ icon: 'rocket', text: 'Поддержка отечественного производителя' },
-			{ icon: 'heart', text: 'Увеличивает лайки на фотографиях' },
-			{ icon: 'gift', text: 'Поставляется в подарочной упаковке' }
+			{ icon: 'gift', text: 'Поставляется в&nbsp;подарочной&nbsp;упаковке' }
 		]
 	},
 	contacts: {

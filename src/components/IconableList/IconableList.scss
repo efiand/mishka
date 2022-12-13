@@ -1,0 +1,97 @@
+.IconableList {
+	position: relative;
+	padding-top: 37px;
+	padding-bottom: 58px;
+
+	@include container;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		height: 6px;
+		background-image: url("#{$pathSprite}#waves");
+		background-size: 320px 6px;
+	}
+}
+
+.IconableList__heading {
+	margin: 0 0 28px;
+}
+
+.IconableList__list {
+	display: grid;
+	gap: 28px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.IconableList__item {
+	position: relative;
+	padding-top: 55px;
+	font-weight: 700;
+	font-size: 17px;
+	line-height: 20px;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 27px;
+		background-color: $colorDowny;
+	}
+
+	&_eco::before {
+		left: 8px;
+		width: 33px;
+		height: 38px;
+
+		@include mask("eco");
+	}
+
+	&_banknote::before {
+		top: 1px;
+		width: 47px;
+
+		@include mask("banknote");
+	}
+
+	&_heart::before {
+		top: 6px;
+		left: 7px;
+		width: 34px;
+
+		@include mask("heart");
+	}
+
+	&_handmade::before {
+		top: 3px;
+		left: 3px;
+		width: 35px;
+		height: 34px;
+
+		@include mask("handmade");
+	}
+
+	&_rocket::before {
+		top: 4px;
+		left: -6px;
+		width: 55px;
+		height: 23px;
+
+		@include mask("rocket");
+	}
+
+	&_gift::before {
+		top: 2px;
+		left: 3px;
+		width: 33px;
+		height: 32px;
+
+		@include mask("gift");
+	}
+}

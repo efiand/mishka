@@ -92,7 +92,7 @@
 }
 
 @mixin mask($icon) {
-	mask: url("../images/icons.svg##{$icon}") no-repeat center / 100%;
+	mask: url("#{$pathSprite}##{$icon}") no-repeat center / 100%;
 }
 
 @mixin hover {

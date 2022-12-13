@@ -3,7 +3,7 @@
 
 	<ul class="IconableList__list">
 		{% for item in list %}
-			<li class="IconableList__item IconableList__item_{{ item.icon }}" style="--icon: url('../images/icons.svg#{{ item.icon }}')">
+			<li class="IconableList__item IconableList__item_{{ item.icon }}">
 				{{ item.text }}
 			</li>
 		{% endfor %}

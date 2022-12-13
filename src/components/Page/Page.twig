@@ -5,9 +5,7 @@
 		{% include component('PageHeader') %}
 
 		<main class="Page__main">
-			{% if pageHeading %}
-				{% include component('MainHeader') with pageHeading %}
-			{% endif %}
+			{% include component('MainTitle') with pageHeading|merge({ bemMix: 'Page__mainTitle' }) %}
 
 			{% block main %}{% endblock %}
 		</main>

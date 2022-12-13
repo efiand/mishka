@@ -1,0 +1,84 @@
+.PromoLinks {
+	@include container(false);
+}
+
+.PromoLinks__list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.PromoLinks__link {
+	position: relative;
+	display: block;
+	min-height: 48px; // Для иконки
+	padding: 24px 50% 31px 30px;
+	font-weight: 700;
+	font-size: 19px;
+	line-height: 24px;
+	text-decoration: none;
+	color: $colorWhite;
+	background-color: $colorDowny;
+	outline-offset: -2px;
+
+	@include transition("padding-bottom, background-color");
+
+	&::before {
+		content: "";
+		position: absolute;
+		background-color: $colorDarkCyan;
+		opacity: 0.5;
+
+		@include transition("opacity");
+	}
+
+	@include hoverFocus {
+		padding-bottom: 36px;
+		background-color: $colorDownyAlter;
+
+		&::before {
+			opacity: 0.7;
+		}
+	}
+
+	@include active {
+		padding-bottom: 36px;
+		background-color: $colorDownyAlter;
+
+		&::before {
+			opacity: 0.3;
+		}
+	}
+
+	&_interior::before {
+		top: 23px;
+		right: 36px;
+		width: 40px;
+		height: 62px;
+
+		@include mask("interior");
+	}
+
+	&_lego::before {
+		top: 21px;
+		right: 27px;
+		width: 60px;
+		height: 60px;
+
+		@include mask("lego");
+	}
+}
+
+.PromoLinks__item {
+	&:nth-child(2n) .PromoLinks__link {
+		background-color: $colorPuertoRico;
+
+		@include hoverFocus {
+			background-color: $colorPuertoRicoAlter;
+		}
+
+		@include active {
+			background-color: $colorPuertoRicoAlter;
+		}
+	}
+}

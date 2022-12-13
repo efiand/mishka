@@ -1,3 +1,8 @@
+const description = 'Страница не найдена';
+
 export default () => ({
-	description: 'Страница не найдена'
+	description,
+	pageHeading: {
+		title: description
+	}
 });

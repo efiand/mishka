@@ -1,0 +1,21 @@
+.MainTitle {
+	padding-top: 72px;
+	padding-bottom: 74px;
+	font-weight: 700;
+	font-size: 27px;
+	line-height: 30px;
+	text-align: center;
+	background-color: $colorWhiteSmoke;
+	background-repeat: no-repeat;
+	background-position: 50% -18px;
+	background-size: 575px;
+
+	@include container;
+
+	&_promo {
+		min-height: 136px;
+		background-color: $colorSnow;
+
+		@include customBackground(false);
+	}
+}

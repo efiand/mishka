@@ -1,7 +1,11 @@
-<ul class="PromoLinks">
-	{% for link in promoLinks %}
-		<li>
-			<a class="PromoLinks__link PromoLinks__link_{{ link.icon }}" href="{{ link.url }}">{{ link.title }}</a>
-		</li>
-	{% endfor %}
-</ul>
+<section class="PromoLinks">
+	<h2 class="visuallyHidden">{{ title|punctify }}</h2>
+
+	<ul class="PromoLinks__list">
+		{% for link in list %}
+			<li class="PromoLinks__item">
+				<a class="PromoLinks__link PromoLinks__link_{{ link.icon }}" href="{{ link.url }}">{{ link.title }}</a>
+			</li>
+		{% endfor %}
+	</ul>
+</section>

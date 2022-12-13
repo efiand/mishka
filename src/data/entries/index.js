@@ -18,7 +18,7 @@ const weekGood = mapGood(
 );
 weekGood.imageSet.adaptive = false;
 
-export default ({ bonusText, project, slogan }) => ({
+export default ({ bonusText, project }) => ({
 	advantages: {
 		heading: 'Коротко о нас:',
 		list: [
@@ -33,7 +33,7 @@ export default ({ bonusText, project, slogan }) => ({
 	contacts: {
 		details: [
 			{ key: 'e-mail', value: '<a href="mailto:info@mimimishkashop.ru">info@mimimishkashop.ru</a>' },
-			{ key: 'адрес', value: 'г. Санкт-Петербургул. Большая Конюшеннаяд. 19/8, офис 101' }
+			{ key: 'адрес', value: 'г. Санкт-Петербург<br>ул. Большая Конюшенная<br>д. 19/8, офис 101' }
 		],
 		heading: 'Контакты',
 		link: {
@@ -52,11 +52,14 @@ export default ({ bonusText, project, slogan }) => ({
 		backgroundSet: {
 			filename: 'main-header'
 		},
-		promoLinks: [
+		title: 'Милые штуки ручной<br>работы для дома'
+	},
+	promoLinks: {
+		list: [
 			{ icon: 'interior', title: 'Предметы интерьера', url: '#!' },
 			{ icon: 'lego', title: 'Детские игрушки', url: '#!' }
 		],
-		title: slogan
+		title: 'Промо-товары'
 	},
 	reviews: {
 		backgroundSet: {

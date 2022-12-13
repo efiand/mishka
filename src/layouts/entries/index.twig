@@ -1,6 +1,8 @@
 {% extends body %}
 
 {% block main %}
+	{% include component('~PromoLinks') with promoLinks %}
+
 	{% include component('~GoodSection') with weekGood %}
 
 	{% include component('~IconableList') with advantages %}

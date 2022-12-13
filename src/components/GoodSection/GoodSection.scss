@@ -1,0 +1,62 @@
+.GoodSection {
+	padding-top: 31px;
+	padding-bottom: 36px;
+
+	@include container;
+}
+
+.GoodSection__header {
+	margin-bottom: 18px;
+}
+
+.GoodSection__heading {
+	margin: 0 0 3px;
+}
+
+.GoodSection__label {
+	margin: 0;
+	font-weight: 700;
+	font-size: 17px;
+	line-height: 20px;
+	text-transform: uppercase;
+	color: $colorDowny;
+}
+
+.GoodSection__description {
+	margin: 0 0 21px;
+	color: $colorCharcoal;
+}
+
+.GoodSection__details {
+	display: grid;
+	grid-template-columns: 98px 1fr;
+	margin: 0 0 28px;
+	line-height: 20px;
+	color: $colorCharcoal;
+}
+
+.GoodSection__item {
+	margin: 0;
+	padding: 7px 20px 12px 0;
+	border-bottom: 1px solid $colorWhisper;
+}
+
+.GoodSection__picture {
+	@include vpMobile {
+		display: table;
+		margin: 0 auto 26px;
+	}
+}
+
+.GoodSection__price {
+	margin: 0 0 24px;
+	font-weight: 700;
+	font-size: 17px;
+	line-height: 24px;
+	text-align: center;
+	color: $colorCharcoal;
+}
+
+.GoodSection__button {
+	display: block;
+}

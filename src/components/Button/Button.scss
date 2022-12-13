@@ -1,3 +1,22 @@
 .Button {
-	@include button;
+	padding: 14px 32px;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 20px;
+	text-transform: uppercase;
+	text-align: center;
+	color: $colorCharcoal;
+
+	@include button(transparent, 2px solid $colorCharcoal, 0, false);
+	@include transition("color, background-color");
+
+	@include hoverFocus {
+		color: $colorWhite;
+		background-color: $colorCharcoal;
+	}
+
+	@include active {
+		color: rgba($colorWhite, 0.3);
+		background-color: $colorCharcoal;
+	}
 }

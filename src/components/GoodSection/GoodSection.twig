@@ -9,10 +9,8 @@
 
 		<dl class="GoodSection__details">
 			{% for detail in details %}
-				<div class="GoodSection__detail">
-					<dt class="GoodSection__key">{{ detail.key }}:</dt>
-					<dd class="GoodSection__value">{{ detail.value }}</dd>
-				</div>
+				<dt class="GoodSection__item">{{ detail.key }}:</dt>
+				<dd class="GoodSection__item">{{ detail.value }}</dd>
 			{% endfor %}
 		</dl>
 

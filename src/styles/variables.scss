@@ -1,17 +1,11 @@
 // https://www.htmlcsscolor.com/hex/000000
-$colorPrimary: var(--colorPrimary);
-$colorBlack: var(--colorBlack);
-$colorAubergine: var(--colorAubergine);
-$colorWhite: var(--colorWhite);
+$colorAubergine: #231f20;
+$colorBlack: #000000;
+$colorDowny: #63d1bb;
+$colorWhisper: #ececec;
+$colorWhite: #ffffff;
 
 $breakpointTablet: getBreakpoint("TABLET") * 1px;
 $breakpointDesktop: getBreakpoint("DESKTOP") * 1px;
 
 $paddingFluid: calc(50% - 525px);
-
-:root {
-	--colorAubergine: #231f20;
-	--colorBlack: #000000;
-	--colorWhite: #ffffff;
-	--colorPrimary: var(--colorBlack);
-}

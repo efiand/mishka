@@ -2,6 +2,8 @@
 	display: table;
 	margin: 0 auto;
 	padding: 22px;
+
+	@include defaultInteractive;
 }
 
 .Logo__picture {

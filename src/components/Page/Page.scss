@@ -4,3 +4,9 @@
 
 	@include viewport;
 }
+
+.Page__main {
+	@include vpMobile {
+		margin-top: 80px;
+	}
+}

@@ -14,7 +14,7 @@ export const punctify = (str, args) => {
 };
 
 export const initApp = (App, target = null, props = {}) => {
-	if (!App || !target) {
+	if (!App) {
 		return null;
 	}
 

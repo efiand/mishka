@@ -46,15 +46,17 @@
 }
 
 @mixin viewport {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	overflow-x: hidden;
-	overflow-y: scroll; // Предотвращение скачков вправо-влево при переполнении
+	html & {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		overflow-x: hidden;
+		overflow-y: scroll; // Предотвращение скачков вправо-влево при переполнении
 
-	@include custom-scrollbar;
+		@include custom-scrollbar;
+	}
 }
 
 @mixin button($background: transparent, $border: none, $radius: 0) {
@@ -70,9 +72,11 @@
 	@include defaultInteractive;
 }
 
-@mixin container() {
-	padding-right: 30px;
-	padding-left: 30px;
+@mixin container($mobile: true) {
+	@if $mobile {
+		padding-right: 30px;
+		padding-left: 30px;
+	}
 
 	@include vpTabletDesktop {
 		padding-right: 50px;

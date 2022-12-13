@@ -1,5 +1,12 @@
 .PageHeader {
-	position: relative;
+	width: 100%;
+	background-color: $colorWhite;
+
+	@include vpMobile {
+		position: absolute;
+		z-index: 1;
+		border-bottom: 1px solid $colorWhisper;
+	}
 
 	@include vpTabletDesktop {
 		@include container;
@@ -11,17 +18,76 @@
 	padding: 0;
 	list-style: none;
 
-	&_additions {
-		@include vpMobile {
-			display: none;
-		}
+	@include vpMobile {
+		display: none;
 	}
 }
 
 .PageHeader__link {
 	display: block;
+	padding: 27px 30px 27px 76px;
+	font-weight: 700;
+	font-size: 17px;
+	line-height: 24px;
 	text-decoration: none;
-	text-align: center;
+	border-top: 1px solid $colorWhisper;
+	outline-offset: -2px;
+
+	@include transition("color");
+
+	@include hoverFocus {
+		color: rgba($colorBlack, 0.6);
+	}
+
+	@include active {
+		color: rgba($colorBlack, 0.3);
+	}
+
+	&_iconable {
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 32px;
+			left: 32px;
+			height: 18px;
+			background-color: rgba($colorBlack, 0.2);
+
+			@include transition("background-color");
+		}
+
+		@include hoverFocus {
+			&::before {
+				background-color: $colorDowny;
+			}
+		}
+
+		@include active {
+			&::before {
+				background-color: rgba($colorDowny, 0.3);
+			}
+		}
+	}
+
+	&_search::before {
+		width: 18px;
+
+		@include mask("search");
+	}
+
+	&_cart::before {
+		left: 30px;
+		width: 21px;
+
+		@include mask("cart");
+	}
+}
+
+.PageHeader__description {
+	@include vpMobile {
+		display: none;
+	}
 }
 
 .PageHeader__toggler {
@@ -74,5 +140,30 @@
 		&_open {
 			display: none;
 		}
+	}
+}
+
+.PageHeader_open,
+.PageHeader_noJs {
+	.PageHeader__menu {
+		@include vpMobile {
+			display: block;
+		}
+	}
+
+	.PageHeader__menu_additions {
+		@include vpMobile {
+			display: none;
+		}
+	}
+}
+
+.PageHeader_noJs {
+	@include vpMobile {
+		position: relative;
+	}
+
+	.PageHeader__toggler {
+		display: none;
 	}
 }

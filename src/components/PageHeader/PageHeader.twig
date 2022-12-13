@@ -1,20 +1,5 @@
-<header class="PageHeader PageHeader_open {{ bemMix }}">
+<header class="PageHeader PageHeader_noJs {{ bemMix }}">
 	{% include component('Logo') with { bemMix: 'PageHeader__logo' } %}
-
-	{% for menu in navigation %}
-		<ul class="PageHeader__menu PageHeader__menu_{{ menu.alias }}">
-			{% for link in menu.list %}
-				<li>
-					{% set linkIcon = link.icon ? 'style="--icon: url(\'../images/icons.svg#' ~ link.icon ~ '\')"' %}
-					<a class="PageHeader__link {{ link.icon ? 'PageHeader__link_iconable' }}" href="{{ link.url }}" {{ linkIcon }}>
-						{{ link.title}}
-					</a>
-				</li>
-			{% endfor %}
-		</ul>
-	{% endfor %}
-
-	<p class="PageHeader__description">{{ bonusText }}</p>
 
 	<button class="PageHeader__toggler" type="button">
 		{% for key in togglerText|keys %}
@@ -23,4 +8,19 @@
 			</span>
 		{% endfor %}
 	</button>
+
+	{% for menu in navigation %}
+		<ul class="PageHeader__menu PageHeader__menu_{{ menu.alias }}">
+			{% for link in menu.list %}
+				<li>
+					{% set linkIcon = link.icon ? 'style="--icon: url(\'../images/icons.svg#' ~ link.icon ~ '\')"' %}
+					<a class="PageHeader__link {{ link.icon ? 'PageHeader__link_iconable PageHeader__link_' ~ link.icon }}" href="{{ link.url }}">
+						<span class="PageHeader__linkTitle">{{ link.title}}</span>
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	{% endfor %}
+
+	<p class="PageHeader__description">{{ bonusText }}</p>
 </header>

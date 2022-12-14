@@ -24,9 +24,8 @@
 .IconableList__list {
 	display: grid;
 	gap: 28px;
-	margin: 0;
-	padding: 0;
-	list-style: none;
+
+	@include listReset;
 }
 
 .IconableList__item {

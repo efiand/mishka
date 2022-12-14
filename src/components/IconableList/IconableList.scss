@@ -1,20 +1,7 @@
 .IconableList {
-	position: relative;
 	padding-top: 37px;
-	padding-bottom: 58px;
 
 	@include container;
-
-	&::before {
-		content: "";
-		position: absolute;
-		top: 0;
-		right: 0;
-		left: 0;
-		height: 6px;
-		background-image: url("#{$pathSprite}#waves");
-		background-size: 320px 6px;
-	}
 }
 
 .IconableList__heading {

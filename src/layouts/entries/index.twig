@@ -1,11 +1,11 @@
 {% extends body %}
 
 {% block main %}
-	{% include component('~PromoLinks') with promoLinks %}
+	{% include component('~PromoLinks') with promoLinks|merge({ bemMix: 'Page__promoLinks' }) %}
 
-	{% include component('~GoodSection') with weekGood %}
+	{% include component('~GoodSection') with weekGood|merge({ bemMix: 'Page__goodSection' }) %}
 
-	{% include component('~IconableList') with advantages %}
+	{% include component('~IconableList') with advantages|merge({ bemMix: 'Page__iconableList Page__decorable' }) %}
 
 	{% include component('~Reviews') with reviews %}
 

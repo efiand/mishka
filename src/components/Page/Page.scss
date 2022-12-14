@@ -15,3 +15,30 @@
 .Page__mainTitle {
 	margin: 0;
 }
+
+.Page__promoLinks {
+	margin-bottom: 31px;
+}
+
+.Page__goodSection {
+	margin-bottom: 36px;
+}
+
+.Page__iconableList {
+	margin-bottom: 58px;
+}
+
+.Page__decorable {
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		height: 6px;
+		background-image: url("#{$pathSprite}#waves");
+		background-size: 320px 6px;
+	}
+}

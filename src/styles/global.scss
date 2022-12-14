@@ -1,15 +1,15 @@
 html {
 	min-width: 320px;
-	overflow-y: scroll; // чтобы содержимое не скакало влево-вправо при быстрой смене страниц
 	overflow-anchor: none;
 	font-size: 15px;
 	line-height: 1.6; // 24px для 1rem
 	font-family: "Open Sans", serif;
-	scroll-behavior: smooth;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeLegibility;
 	-webkit-tap-highlight-color: transparent;
+
+	@include customScrollbar;
 
 	@include vpTabletDesktop {
 		font-size: 17px;

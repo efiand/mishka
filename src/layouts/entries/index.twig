@@ -7,9 +7,9 @@
 
 	{% include component('~IconableList') with advantages|merge({ bemMix: 'Page__iconableList Page__decorable' }) %}
 
-	{% include component('~Reviews') with reviews %}
+	{% include component('~Reviews') with reviews|merge({ bemMix: 'Page__reviews' }) %}
 
-	{% include component('~Contacts') with contacts %}
+	{% include component('~Contacts') with contacts|merge({ bemMix: 'Page__contacts Page__decorable' }) %}
 {% endblock %}
 
 {% block modal %}

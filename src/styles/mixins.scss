@@ -83,11 +83,9 @@
 	list-style: none;
 }
 
-@mixin container($mobile: true) {
-	@if $mobile {
-		padding-right: 30px;
-		padding-left: 30px;
-	}
+@mixin container {
+	padding-right: 30px;
+	padding-left: 30px;
 
 	@include vpTabletDesktop {
 		padding-right: 50px;

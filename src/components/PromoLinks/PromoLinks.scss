@@ -1,5 +1,13 @@
 .PromoLinks {
-	@include container(false);
+	@include vpTabletDesktop {
+		padding-right: 50px;
+		padding-left: 50px;
+	}
+
+	@include vpDesktop {
+		padding-right: $paddingFluid;
+		padding-left: $paddingFluid;
+	}
 }
 
 .PromoLinks__list {

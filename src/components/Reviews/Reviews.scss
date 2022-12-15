@@ -1,0 +1,95 @@
+.Reviews {
+	@include container;
+}
+
+.Reviews__heading {
+	margin: 0 0 14px;
+}
+
+.Reviews__slider {
+	width: var(--width, 100%);
+	margin-bottom: 30px;
+	overflow: hidden;
+}
+
+.Reviews__list {
+	display: flex;
+	transform: translateX(var(--translate, 0));
+
+	@include listReset;
+	@include transition("transform");
+}
+
+.Reviews__item {
+	flex-shrink: 0;
+	width: var(--width, 100%);
+}
+
+.Reviews__review {
+	height: 100%;
+	margin: 0;
+}
+
+.Reviews__controls {
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1px;
+	margin-bottom: 38px;
+	border: 1px solid $colorWhisper;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 50%;
+		width: 1px;
+		background-color: $colorWhisper;
+		transform: translateX(-50%);
+	}
+}
+
+.Reviews__control {
+	display: flex;
+	min-height: 50px;
+	outline-offset: -1px;
+
+	@include button;
+
+	&::before {
+		content: "";
+		width: 50px;
+		height: 26px;
+		margin: auto;
+		background-color: currentColor;
+		transform: translateX(-2px);
+
+		@include mask("arrow-huge");
+		@include defaultInteractive;
+	}
+
+	&_prev::before {
+		transform: translateX(-2px) scale(-1);
+	}
+}
+
+.Reviews__button {
+	display: block;
+}
+
+.Reviews_noJs {
+	.Reviews__list {
+		display: block;
+	}
+
+	.Reviews__item + .Reviews__item {
+		margin-top: 40px;
+		padding-top: 30px;
+		border-top: 1px solid $colorWhisper;
+	}
+
+	.Reviews__controls {
+		display: none;
+	}
+}

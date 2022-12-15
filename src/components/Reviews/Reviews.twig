@@ -1,13 +1,15 @@
-<section class="Reviews" {{ setBg(backgroundSet) }}>
+<section class="Reviews Reviews_noJs {{ bemMix }}" {{ setBg(backgroundSet) }}>
 	<h2 class="Reviews__heading Heading">{{ heading }}</h2>
 
-	<ul class="Reviews__list">
-		{% for review in list %}
-			<li class="Reviews__item">
-				{% include component('Review') with review %}
-			</li>
-		{% endfor %}
-	</ul>
+	<div class="Reviews__slider">
+		<ul class="Reviews__list">
+			{% for review in list %}
+				<li class="Reviews__item">
+					{% include component('Review') with review|merge({ bemMix: 'Reviews__review' }) %}
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
 
 	{% if list|length > 1 %}
 		<div class="Reviews__controls">

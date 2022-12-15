@@ -1,7 +1,20 @@
 .PageFooter {
+	padding-top: 10px;
+	padding-bottom: 22px;
 	background-color: $colorWhiteSmoke;
+
+	@include container;
 }
 
 .PageFooter__socials {
+	margin: 0 auto 12px;
+}
+
+.PageFooter__dev {
 	margin: 0;
+
+	@include vpMobile {
+		padding-top: 20px;
+		border-top: 1px solid $colorWhisperSecondary;
+	}
 }

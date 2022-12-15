@@ -1,3 +1,44 @@
 .Socials {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
 	@include listReset(false);
+}
+
+.Socials__link {
+	display: flex;
+	width: 58px;
+	height: 58px;
+	color: $colorAubergine;
+
+	@include transition("color");
+
+	@include hoverFocus {
+		color: $colorPuertoRicoSecondary;
+	}
+
+	@include active {
+		color: rgba($colorPuertoRicoSecondary, 0.3);
+	}
+
+	&::before {
+		content: "";
+		width: 29px;
+		height: 23px;
+		margin: auto;
+		background-color: currentColor;
+	}
+
+	&_vk::before {
+		@include mask("vk");
+	}
+
+	&_telegram::before {
+		@include mask("telegram");
+	}
+
+	&_youtube::before {
+		@include mask("youtube");
+	}
 }

@@ -1,0 +1,28 @@
+.Dev {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 700;
+	font-size: 19px;
+	line-height: 18px;
+}
+
+.Dev__link {
+	margin-left: 28px;
+	color: $colorDowny;
+	transform: translateY(2px);
+
+	@include transition("color");
+
+	@include hoverFocus {
+		color: $colorPuertoRicoSecondary;
+	}
+
+	@include active {
+		color: rgba($colorPuertoRicoSecondary, 0.3);
+	}
+}
+
+.Dev__logo {
+	--color: currentColor;
+}

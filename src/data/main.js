@@ -6,13 +6,12 @@ export default () => ({
 	bonusText: 'Бесплатная доставка по России',
 	devData: {
 		logo: {
-			alt: 'Логотип HTML Academy',
-			ext: 'svg',
-			filename: 'logo-htmlacademy',
 			height: 35,
+			image: 'logo-htmlacademy.svg#dev',
 			width: 27
 		},
 		text: 'Разработано',
+		title: 'На страницу разработчика',
 		url: 'https://htmlacademy.ru/intensive/adaptive'
 	},
 	logo: {

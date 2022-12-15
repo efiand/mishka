@@ -1,7 +1,9 @@
 <p class="Dev {{ bemMix }}">
 	{{ text }}
 
-	<a class="Dev__link" href="{{ url }}">
-		{% include component('Picture') with logo|merge({ bemMix: 'Dev__picture' }) %}
+	<a class="Dev__link" href="{{ url }}" aria-label="{{ title|punctify }}">
+		<svg class="Dev__logo" width="{{ logo.width }}" height="{{ logo.height }}" role="img" focusable="false">
+			<use xlink:href="{{ rootPath }}images/{{ logo.image }}" />
+		</svg>
 	</a>
 </p>

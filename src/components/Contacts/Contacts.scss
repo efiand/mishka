@@ -1,0 +1,52 @@
+.Contacts {
+	padding-top: 44px;
+	padding-bottom: 40px;
+
+	@include vpDesktop {
+		padding-right: $paddingFluid;
+		padding-left: $paddingFluid;
+	}
+}
+
+.Contacts__body {
+	padding: 0 30px;
+
+	@include vpTabletDesktop {
+		padding-right: 50px;
+		padding-left: 50px;
+	}
+}
+
+.Contacts__heading {
+	margin: 0 0 28px;
+}
+
+.Contacts__details {
+	display: grid;
+	grid-template-columns: 60px 1fr;
+	gap: 30px 18px;
+	margin: 0 0 62px;
+	font-size: 14px;
+	line-height: 30px;
+	color: $colorCharcoal;
+}
+
+.Contacts__item {
+	margin: 0;
+	overflow-wrap: anywhere;
+
+	a {
+		text-decoration: none;
+		border-bottom: 1px solid $colorDownyTertiary;
+	}
+}
+
+.Contacts__map {
+	height: 454px;
+	margin-bottom: 42px;
+}
+
+.Contacts__button {
+	display: block;
+	margin: 0 30px;
+}

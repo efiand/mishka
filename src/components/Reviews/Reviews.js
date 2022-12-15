@@ -1,9 +1,9 @@
 export default class Reviews {
-	constructor({ target }) {
+	constructor({ props, target }) {
 		this._reviewsElement = target;
 		this._sliderElement = this._reviewsElement.querySelector('.Reviews__slider');
 		this._slideElements = Array.from(this._sliderElement.querySelectorAll('.Reviews__item'));
-		this._pageElement = document.querySelector('.Page');
+		this._pageElement = props.pageElement;
 
 		if (this._slideElements.length <= 1) {
 			return;

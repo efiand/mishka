@@ -7,12 +7,14 @@ $colorDowny: #63d1bb;
 $colorDownySecondary: #59d5bc;
 $colorDownyTertiary: #62d1ba;
 $colorPuertoRico: #56c3b2;
-$colorPuertoRicoAlter: #46c1ae;
+$colorPuertoRicoSecondary: #46c1ae;
 $colorSnow: #f9f9f9;
 $colorWhisper: #ececec;
+$colorWhisperSecondary: #e5e5e5;
 $colorWhite: #ffffff;
 $colorWhiteSmoke: #f1f1f1;
 
+$breakpointMobile: getBreakpoint("MOBILE") * 1px;
 $breakpointTablet: getBreakpoint("TABLET") * 1px;
 $breakpointDesktop: getBreakpoint("DESKTOP") * 1px;
 

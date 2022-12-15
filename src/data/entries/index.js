@@ -18,7 +18,9 @@ const weekGood = mapGood(
 );
 weekGood.imageSet.adaptive = false;
 
-export default ({ bonusText, project }) => ({
+const ADDRESS = 'г. Санкт-Петербург<br>ул. Большая Конюшенная<br>д. 19/8, офис 101';
+
+export default ({ bonusText, pageData, project }) => ({
 	advantages: {
 		heading: 'Коротко о нас:',
 		list: [
@@ -33,9 +35,10 @@ export default ({ bonusText, project }) => ({
 	contacts: {
 		details: [
 			{ key: 'e-mail', value: '<a href="mailto:info@mimimishkashop.ru">info@mimimishkashop.ru</a>' },
-			{ key: 'адрес', value: 'г. Санкт-Петербург<br>ул. Большая Конюшенная<br>д. 19/8, офис 101' }
+			{ key: 'адрес', value: ADDRESS }
 		],
 		heading: 'Контакты',
+		id: 'map',
 		link: {
 			title: 'Напишите нам',
 			url: '#!'
@@ -48,6 +51,28 @@ export default ({ bonusText, project }) => ({
 		}
 	},
 	description: `${punctify(project)} ${bonusText}`,
+	pageData: {
+		...pageData,
+		map: {
+			initials: {
+				center: [59.9387165, 30.3230474],
+				controls: [],
+				zoom: 17
+			},
+			placemark: [
+				{
+					hintContent: ADDRESS
+				},
+				{
+					iconImageHref: 'images/icons.svg#map-pin',
+					iconImageOffset: [-22, -82],
+					iconImageSize: [67, 100],
+					iconLayout: 'default#image',
+					iconShadow: false
+				}
+			]
+		}
+	},
 	pageHeading: {
 		backgroundSet: {
 			filename: 'main-header'

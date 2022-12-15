@@ -9,6 +9,7 @@
 }
 
 .Contacts__body {
+	margin-bottom: 62px;
 	padding: 0 30px;
 
 	@include vpTabletDesktop {
@@ -25,7 +26,7 @@
 	display: grid;
 	grid-template-columns: 60px 1fr;
 	gap: 30px 18px;
-	margin: 0 0 62px;
+	margin: 0;
 	font-size: 14px;
 	line-height: 30px;
 	color: $colorCharcoal;
@@ -36,8 +37,21 @@
 	overflow-wrap: anywhere;
 
 	a {
+		padding-bottom: 2px;
 		text-decoration: none;
 		border-bottom: 1px solid $colorDownyTertiary;
+
+		@include transition("color, border-color");
+
+		@include hoverFocus {
+			color: $colorPuertoRicoSecondary;
+			border-color: currentColor;
+		}
+
+		@include active {
+			color: $colorPuertoRicoSecondary;
+			border-color: rgba($colorPuertoRicoSecondary, 0.1);
+		}
 	}
 }
 

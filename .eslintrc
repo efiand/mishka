@@ -8,6 +8,9 @@
 		"prettier",
 		"plugin:markdown/recommended"
 	],
+	"globals": {
+		"ymaps": "readonly"
+	},
 	"overrides": [
 		{
 			"files": "*.js",
@@ -21,7 +24,8 @@
 		{
 			"files": "src/data/**/*.js",
 			"rules": {
-				"max-lines-per-function": "off"
+				"max-lines-per-function": "off",
+				"no-magic-numbers": "off"
 			}
 		},
 		{

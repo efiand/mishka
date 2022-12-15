@@ -23,7 +23,7 @@
 	}
 }
 
-@mixin customScrollbar($colorThumb: currentColor, $colorTrack: transparent, $scrollbarWidth: 8px) {
+@mixin customScrollbar($colorThumb: $colorCharcoal, $colorTrack: $colorWhiteSmoke, $scrollbarWidth: 8px) {
 	scrollbar-color: $colorThumb $colorTrack;
 	scrollbar-width: thin;
 
@@ -52,9 +52,14 @@
 	left: 0;
 	overflow-x: hidden;
 	overflow-y: scroll; // Предотвращение скачков вправо-влево при переполнении
+	overflow-anchor: none;
 	scroll-behavior: smooth;
 
 	@include customScrollbar;
+
+	@include vpMobileXs {
+		overflow-x: auto;
+	}
 }
 
 @mixin button($background: transparent, $border: none, $radius: 0, $noCustomInteractive: true) {
@@ -196,6 +201,12 @@
 		html & {
 			@content;
 		}
+	}
+}
+
+@mixin vpMobileXs {
+	@media (max-width: ($breakpointMobile - 1px)) {
+		@content;
 	}
 }
 

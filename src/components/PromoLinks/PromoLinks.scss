@@ -80,11 +80,11 @@
 		background-color: $colorPuertoRico;
 
 		@include hoverFocus {
-			background-color: $colorPuertoRicoAlter;
+			background-color: $colorPuertoRicoSecondary;
 		}
 
 		@include active {
-			background-color: $colorPuertoRicoAlter;
+			background-color: $colorPuertoRicoSecondary;
 		}
 	}
 }

@@ -4,7 +4,7 @@
 	<div class="Page">
 		{% include component('PageHeader') %}
 
-		<main class="Page__main">
+		<main class="Page__main Page__main_noJs">
 			{% include component('MainTitle') with pageHeading|merge({ bemMix: 'Page__mainTitle' }) %}
 
 			{% block main %}{% endblock %}

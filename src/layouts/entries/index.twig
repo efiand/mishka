@@ -9,7 +9,7 @@
 
 	{% include component('~Reviews') with reviews|merge({ bemMix: 'Page__reviews' }) %}
 
-	{% include component('~Contacts') with contacts|merge({ bemMix: 'Page__decorable' }) %}
+	{% include component('~Contacts') with contacts|merge({ bemMix: 'Page__contacts Page__decorable' }) %}
 {% endblock %}
 
 {% block modal %}

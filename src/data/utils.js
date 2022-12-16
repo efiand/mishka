@@ -11,9 +11,7 @@ export const mapGood = (good, i) => {
 			alt: `Изображение товара «${good.heading}»`,
 			filename: `good-${id}`
 		},
-		link: {
-			title: 'Заказать',
-			url: '#!'
-		}
+		linkTitle: 'Заказать',
+		url: '#'
 	};
 };

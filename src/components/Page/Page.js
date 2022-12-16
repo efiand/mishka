@@ -2,6 +2,7 @@ import Form from '../Form/Form.svelte';
 import Map from '../Map/Map.js';
 import PageHeader from '../PageHeader/PageHeader.js';
 import Reviews from '../Reviews/Reviews.js';
+import Video from '../Video/Video.js';
 import { initApp } from '../../scripts/utils.js';
 
 const apps = {
@@ -52,6 +53,7 @@ export default class Page {
 			pageElement: this._pageElement
 		});
 		initApp(Reviews, this._pageElement.querySelector('.Reviews'), { pageElement: this._pageElement });
+		initApp(Video, this._pageElement.querySelector('.Video'));
 	}
 
 	_scrollHandler() {

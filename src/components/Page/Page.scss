@@ -26,14 +26,44 @@
 
 .Page__goodSection {
 	margin-bottom: 36px;
+
+	@include container;
 }
 
 .Page__iconableList {
 	margin-bottom: 57px;
+	padding-top: 37px;
+
+	@include container;
 }
 
 .Page__reviews {
 	margin-bottom: 45px;
+
+	@include container;
+}
+
+.Page__contacts {
+	margin-bottom: 40px;
+	padding-top: 44px;
+
+	@include vpDesktop {
+		padding-right: $paddingFluid;
+		padding-left: $paddingFluid;
+	}
+}
+
+.Page__goods {
+	margin-bottom: 30px;
+	padding-top: 30px;
+
+	@include container;
+}
+
+.Page__process {
+	margin-bottom: 58px;
+
+	@include container;
 }
 
 .Page__decorable {

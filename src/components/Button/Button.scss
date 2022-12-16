@@ -6,8 +6,9 @@
 	text-transform: uppercase;
 	text-align: center;
 	color: $colorCharcoal;
+	outline-color: $colorCharcoal;
 
-	@include button(transparent, 2px solid $colorCharcoal, 0, false);
+	@include button(transparent, 2px solid $colorCharcoal);
 	@include transition("color, background-color");
 
 	@include hoverFocus {

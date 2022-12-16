@@ -1,11 +1,13 @@
-<section class="VideoCard" style="--icon: url('../images/icons.svg#{{ icon }}')">
-	<h2 class="VideoCard__heading">{{ heading }}</h2>
+<section class="VideoCard {{ bemMix }}">
+	<h2 class="VideoCard__heading Subheading">{{ heading }}</h2>
 
-	{% include component('Video') with video|merge({ bemMix: 'VideoCard_video' }) %}
+	{% include component('Video') with video|merge({ bemMix: 'VideoCard__video' }) %}
 
-	<p class="VideoCard__text">{{ text }}</p>
+	<footer class="VideoCard__content">
+		<p class="VideoCard__text">{{ text }}</p>
 
-	<a class="VideoCard__button Button" href="{{ link.url }}">
-		{{ link.title }}
-	</a>
+		<a class="VideoCard__button Button" href="{{ link.url }}">
+			{{ link.title }}
+		</a>
+	</footer>
 </section>

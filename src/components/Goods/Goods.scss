@@ -1,0 +1,6 @@
+.Goods__list {
+	display: grid;
+	gap: 30px;
+
+	@include listReset;
+}

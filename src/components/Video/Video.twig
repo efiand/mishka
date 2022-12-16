@@ -1,7 +1,11 @@
-<div class="Video">
-	<video class="Video__player" src="{{ src }}" poster="{{ poster }}"></video>
+<div class="Video Video_active" {{ backgroundSet ? setBg(backgroundSet) }}>
+	<video class="Video__player" poster="{{ poster }}" controls>
+		<source src="video/{{ file }}.m4v">
+		<source src="video/{{ file }}.ogv" type="video/ogg">
+		<source src="video/{{ file }}.webm" type="video/webm">
+	</video>
 
-	<button class="Video__toggle" type="button">
+	<button class="Video__control" type="button">
 		<span class="visuallyHidden">Проиграть видео.</span>
 	</button>
 </div>

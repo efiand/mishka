@@ -1,9 +1,9 @@
 {% extends body %}
 
 {% block main %}
-	{% include component('~Goods') with goods %}
+	{% include component('~Goods') with goods|merge({ bemMix: 'Page__goods' }) %}
 
-	{% include component('~VideoCard') with process %}
+	{% include component('~VideoCard') with process|merge({ bemMix: 'Page__process' }) %}
 {% endblock %}
 
 {% block modal %}

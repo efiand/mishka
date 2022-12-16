@@ -12,10 +12,10 @@
 	{% include component('~Contacts') with contacts|merge({ bemMix: 'Page__contacts Page__decorable' }) %}
 {% endblock %}
 
-{% block modal %}
+{% block modals %}
 	{% include component('~Modal') with {
 		Component: 'FormSelect',
 		data: orderForm|merge({ goodId: weekGood.id }),
-		modalId: weekGood.id
+		modalId: 'good-' ~ weekGood.id
 	} %}
 {% endblock %}

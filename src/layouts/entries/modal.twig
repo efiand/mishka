@@ -1,0 +1,21 @@
+{% extends body %}
+
+{% block page %}
+	<div class="Page" id="page">
+		<h1 class="visuallyHidden">Тестовая страница проверки модального окна по pixelperfect.</h1>
+
+		<main class="Page__main">
+			<div class="Page__goods">
+				<a class="Button" href="#modal">Открыть</a>
+			</div>
+		</main>
+	</div>
+{% endblock %}
+
+{% block modals %}
+	{% include component('~Modal') with {
+		Component: 'FormSelect',
+		data: orderForm|merge({ goodId: 1 }),
+		modalId: 'modal'
+	} %}
+{% endblock %}

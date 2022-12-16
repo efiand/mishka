@@ -6,12 +6,12 @@
 	{% include component('~VideoCard') with process|merge({ bemMix: 'Page__process' }) %}
 {% endblock %}
 
-{% block modal %}
+{% block modals %}
 	{% for good in goods.list %}
 		{% include component('~Modal') with {
 			Component: 'FormSelect',
 			data: orderForm|merge({ goodId: good.id }),
-			modalId: good.id
+			modalId: 'good-' ~ good.id
 		} %}
 	{% endfor %}
 {% endblock %}

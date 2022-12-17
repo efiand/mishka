@@ -54,7 +54,7 @@ export default () => ({
 			list: [
 				{
 					title: 'Новые поступления',
-					url: '#!'
+					url: 'modal.html'
 				},
 				{
 					title: 'Распродажа',
@@ -64,7 +64,8 @@ export default () => ({
 		}
 	],
 	orderForm: {
-		heading: 'Добавить в корзину',
+		checked: 1,
+		heading: 'Добавить в&nbsp;корзину',
 		name: 'size',
 		submitText: 'Добавить',
 		title: 'Выберите размер:',

@@ -11,7 +11,8 @@
 		{% include component('~Modal') with {
 			Component: 'FormSelect',
 			data: orderForm|merge({ goodId: good.id }),
-			modalId: 'good-' ~ good.id
+			modalId: 'good-' ~ good.id,
+			noCloser: true
 		} %}
 	{% endfor %}
 {% endblock %}

@@ -8,16 +8,19 @@ $colorDownySecondary: #59d5bc;
 $colorDownyTertiary: #62d1ba;
 $colorPuertoRico: #56c3b2;
 $colorPuertoRicoSecondary: #46c1ae;
+$colorSilver: #c6c6c6;
 $colorSnow: #f9f9f9;
 $colorWhisper: #ececec;
 $colorWhisperSecondary: #e5e5e5;
 $colorWhite: #ffffff;
 $colorWhiteSmoke: #f1f1f1;
 
-$breakpointMobile: getBreakpoint("MOBILE") * 1px;
-$breakpointTablet: getBreakpoint("TABLET") * 1px;
-$breakpointDesktop: getBreakpoint("DESKTOP") * 1px;
+$shadowPopup: 0 5px 10px rgba(0, 1, 1, 0.25);
 
 $paddingFluid: calc(50% - 525px);
 
 $pathSprite: "../images/icons.svg";
+
+$breakpointMobile: getBreakpoint("MOBILE") * 1px;
+$breakpointTablet: getBreakpoint("TABLET") * 1px;
+$breakpointDesktop: getBreakpoint("DESKTOP") * 1px;

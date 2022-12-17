@@ -6,7 +6,8 @@
 
 		<main class="Page__main">
 			<div class="Page__goods">
-				<a class="Button" href="#modal">Открыть</a>
+				<a class="Button" href="#modal">Open</a>
+				<a class="Button" href="index.html">Home</a>
 			</div>
 		</main>
 	</div>
@@ -16,6 +17,7 @@
 	{% include component('~Modal') with {
 		Component: 'FormSelect',
 		data: orderForm|merge({ goodId: 1 }),
-		modalId: 'modal'
+		modalId: 'modal',
+		noCloser: true
 	} %}
 {% endblock %}

@@ -11,6 +11,15 @@
 	@include button(transparent, 2px solid $colorCharcoal);
 	@include transition("color, background-color");
 
+	&_secondary {
+		padding: 18px 34px;
+		font-size: 17px;
+		line-height: 16px;
+		color: $colorWhite;
+		background-color: $colorDowny;
+		border: none;
+	}
+
 	@include hoverFocus {
 		color: $colorWhite;
 		background-color: $colorCharcoal;

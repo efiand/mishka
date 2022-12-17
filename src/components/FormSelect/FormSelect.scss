@@ -1,0 +1,79 @@
+.FormSelect {
+	padding: 30px 30px 46px;
+	text-align: center;
+
+	@include vpTabletDesktop {
+		padding-top: 38px;
+	}
+}
+
+.FormSelect__heading {
+	margin: 0 0 14px;
+	font-weight: 700;
+	font-size: 25px;
+	line-height: 30px;
+	text-transform: uppercase;
+
+	@include vpTabletDesktop {
+		margin-bottom: 10px;
+		font-size: 30px;
+		line-height: 57px;
+	}
+}
+
+.FormSelect__container {
+	margin: 0;
+	padding: 0;
+	color: $colorCharcoal;
+	border: none;
+}
+
+.FormSelect__title {
+	width: 100%;
+	margin: 0 0 21px;
+	padding: 0;
+	line-height: 2;
+	text-align: center;
+
+	@include vpTabletDesktop {
+		margin-bottom: 16px;
+	}
+}
+
+.FormSelect__group {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 7px;
+	max-width: 350px;
+	margin: 0 auto 30px;
+}
+
+.FormSelect__button {
+	padding: 16px 20px;
+	font-weight: 700;
+	font-size: 17px;
+	line-height: 16px;
+	text-transform: uppercase;
+	border: 2px solid rgba($colorCharcoal, 0.1);
+	cursor: pointer;
+
+	@include transition("border-color");
+
+	@include hover {
+		border-color: rgba($colorCharcoal, 0.3);
+	}
+}
+
+.FormSelect__input:focus-visible + .FormSelect__button {
+	outline: 2px solid;
+	outline-offset: 2px;
+}
+
+.FormSelect__input:checked + .FormSelect__button {
+	border-color: $colorDownyTertiary;
+}
+
+.FormSelect__submit {
+	width: 100%;
+	max-width: 350px;
+}

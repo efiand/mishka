@@ -4,18 +4,19 @@
 	<input type="hidden" name="id" value="{{ goodId }}">
 
 	<fieldset class="FormSelect__container">
-		<legend class="FormSelect__titleg">{{ title }}</legend>
+		<legend class="FormSelect__title">{{ title }}</legend>
 
 		<p class="FormSelect__group">
 			{% for value in values %}
 				{% set id = name ~ goodId ~ loop.index %}
 
 				<input
-					class="visuallyHidden"
+					class="FormSelect__input visuallyHidden"
 					id="{{ id }}"
 					type="{{ type ?? 'radio' }}"
 					name="{{ name }}"
 					value="{{ value }}"
+					{{ loop.index == checked ? 'checked' }}
 				/>
 				<label class="FormSelect__button" for="{{ id }}">
 					{{ value }}
@@ -24,5 +25,5 @@
 		</p>
 	</fieldset>
 
-	<button class="FormSelect__submit" type="submit">{{ submitText }}</button>
+	<button class="FormSelect__submit Button Button_secondary" type="submit">{{ submitText }}</button>
 </form>

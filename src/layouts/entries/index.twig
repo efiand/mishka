@@ -16,6 +16,7 @@
 	{% include component('~Modal') with {
 		Component: 'FormSelect',
 		data: orderForm|merge({ goodId: weekGood.id }),
-		modalId: 'good-' ~ weekGood.id
+		modalId: 'good-' ~ weekGood.id,
+		noCloser: true
 	} %}
 {% endblock %}

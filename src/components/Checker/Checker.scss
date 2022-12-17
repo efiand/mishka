@@ -1,0 +1,64 @@
+.Checker {
+	align-items: center;
+	font-weight: 700;
+	font-size: 17px;
+	line-height: 18px;
+	cursor: pointer;
+}
+
+.Checker__input {
+	display: flex;
+	flex-shrink: 0;
+	margin: 0 20px 0 0;
+	border: 2px solid $colorCharcoal;
+	cursor: inherit;
+	appearance: none;
+
+	@include transition("border-color");
+
+	@include hover {
+		border-color: $colorDownyTertiary;
+	}
+
+	@include active {
+		border-color: rgba($colorBlack, 0.3);
+	}
+
+	&::before {
+		content: "";
+		width: 24px;
+		height: 17px;
+		margin: auto;
+		background-color: transparent;
+
+		@include transition("background-color");
+	}
+
+	&_checkbox {
+		width: 38px;
+		height: 38px;
+		margin-right: 23px;
+
+		&::before {
+			@include mask("tick");
+		}
+
+		&:checked::before {
+			background-color: currentColor;
+		}
+	}
+
+	&_radio {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+
+		&::before {
+			@include mask("circle");
+		}
+
+		&:checked::before {
+			background-color: $colorDownyTertiary;
+		}
+	}
+}

@@ -33,7 +33,7 @@ input,
 select,
 textarea {
 	box-sizing: border-box;
-	font-family: inherit;
+	font: inherit;
 	-webkit-text-fill-color: currentColor;
 	box-shadow: none;
 	appearance: none;
@@ -62,6 +62,8 @@ input {
 textarea {
 	overflow: auto;
 	resize: vertical;
+
+	@include customScrollbar;
 }
 
 :focus-visible {

@@ -38,7 +38,6 @@ export default ({ project, slogan }) => ({
 	},
 	process: {
 		heading: 'Процесс производства',
-		icon: 'video',
 		link: {
 			title: 'Сделать заказ',
 			url: 'order.html'

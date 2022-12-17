@@ -1,0 +1,102 @@
+.Form {
+	padding: 17px 30px 55px;
+
+	@include vpTabletDesktop {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+.Form__prepend {
+	margin: 0 0 29px;
+	font-size: 13px;
+	line-height: 24px;
+	color: $colorCharcoal;
+}
+
+.Form__set {
+	margin: 0 0 32px;
+	padding: 0;
+	font-size: 17px;
+	border: none;
+	border-top: 1px solid $colorDownyTertiary;
+}
+
+.Form__title {
+	min-width: 40px;
+	margin: 0 0 26px;
+	padding: 0 20px 0 0;
+	font-weight: 700;
+	line-height: 16px;
+	text-transform: uppercase;
+	overflow-wrap: anywhere;
+	color: $colorDowny;
+}
+
+.Form__checkers {
+	display: grid;
+	gap: 23px;
+
+	@include listReset;
+}
+
+.Form__checker {
+	display: inline-flex;
+}
+
+.Form__fields {
+	display: grid;
+	gap: 22px;
+
+	&_multi {
+		padding-top: 23px;
+	}
+}
+
+.Form__fieldItem {
+	margin: 0;
+}
+
+.Form__footer {
+	display: grid;
+	gap: 30px;
+}
+
+.Form__append {
+	margin: 0;
+	font-size: 14px;
+	line-height: 16px;
+	color: $colorCharcoal;
+}
+
+.Form__submit {
+	min-height: 52px;
+	font-size: 17px;
+	line-height: 16px;
+}
+
+.Form__set_radio {
+	.Form__title {
+		margin-bottom: 33px;
+	}
+
+	.Form__checkers {
+		gap: 11px;
+	}
+}
+
+.Form__set_fields {
+	margin-bottom: 34px;
+
+	.Form__title {
+		margin-bottom: 5px;
+	}
+}
+
+.Form__set_area {
+	margin-bottom: 16px;
+
+	.Form__title {
+		margin-bottom: 22px;
+	}
+}

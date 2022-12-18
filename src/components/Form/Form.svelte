@@ -8,7 +8,7 @@
 				return 'Form__set_area';
 			}
 
-			return 'Form__set_fields';
+			return `Form__set_fields ${fields.length === 1 ? 'Form__set_one' : ''}`;
 		}
 
 		if (checkers.length > 0) {
@@ -68,6 +68,6 @@
 			<p class="Form__append">{@html append}</p>
 		{/if}
 
-		<button class="Form__submit Button" type="submit">{submitText}</button>
+		<button class="Form__submit Button Button_compact" type="submit">{submitText}</button>
 	</footer>
 </form>

@@ -9,15 +9,29 @@
 	}
 }
 
+.Field__label {
+	font-weight: 700;
+
+	@include vpTabletDesktop {
+		padding: 16px 26px 0 0;
+	}
+}
+
 .Field__input {
 	width: 100%;
 	padding: 15px 16px 12px 0;
 	color: $colorCharcoal;
+	background-color: transparent;
 	border: none;
 	border-bottom: 2px solid $colorBlack;
 	outline: none;
 
 	@include transition("border-color");
+
+	@include vpTabletDesktop {
+		padding-top: 12px;
+		padding-left: 16px;
+	}
 
 	@include hoverFocus {
 		border-color: $colorDownyTertiary;
@@ -33,18 +47,30 @@
 		padding-right: 40px;
 		background-repeat: no-repeat;
 		background-size: auto;
+
+		@include vpTabletDesktop {
+			padding-right: 60px;
+		}
 	}
 
 	&_tel {
 		background-image: url("#{$pathSprite}#tel");
 		background-position: right 7px top -2px;
 		background-size: 25px;
+
+		@include vpTablet {
+			background-position: right 26px top -2px;
+		}
 	}
 
 	&_email {
 		background-image: url("#{$pathSprite}#email");
 		background-position: right 3px top 2px;
 		background-size: 32px;
+
+		@include vpTablet {
+			background-position: right 22px top 2px;
+		}
 	}
 
 	&_area {
@@ -53,8 +79,4 @@
 		color: $colorBlack;
 		border: 2px solid $colorCharcoal;
 	}
-}
-
-.Field__label {
-	font-weight: 700;
 }

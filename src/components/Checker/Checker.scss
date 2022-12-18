@@ -4,6 +4,10 @@
 	font-size: 17px;
 	line-height: 18px;
 	cursor: pointer;
+
+	@include vpTabletDesktop {
+		font-size: 19px;
+	}
 }
 
 .Checker__input {
@@ -24,6 +28,10 @@
 		border-color: rgba($colorBlack, 0.3);
 	}
 
+	@include vpTabletDesktop {
+		margin-right: 30px;
+	}
+
 	&::before {
 		content: "";
 		width: 24px;
@@ -39,12 +47,22 @@
 		height: 38px;
 		margin-right: 23px;
 
-		&::before {
-			@include mask("tick");
+		@include vpTabletDesktop {
+			width: 52px;
+			height: 52px;
 		}
 
 		&:checked::before {
 			background-color: currentColor;
+		}
+	}
+
+	&_checkbox::before {
+		@include mask("tick");
+
+		@include vpTabletDesktop {
+			width: 32px;
+			height: 22px;
 		}
 	}
 
@@ -53,12 +71,21 @@
 		height: 40px;
 		border-radius: 50%;
 
-		&::before {
-			@include mask("circle");
+		@include vpTabletDesktop {
+			width: 50px;
+			height: 49px;
 		}
 
 		&:checked::before {
 			background-color: $colorDownyTertiary;
+		}
+	}
+
+	&_radio::before {
+		@include mask("circle");
+
+		@include vpTabletDesktop {
+			height: 21px;
 		}
 	}
 }

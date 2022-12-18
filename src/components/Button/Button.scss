@@ -20,6 +20,12 @@
 		border: none;
 	}
 
+	&_compact {
+		padding: 16px 24px;
+		font-size: 17px;
+		line-height: 16px;
+	}
+
 	@include hoverFocus {
 		color: $colorWhite;
 		background-color: $colorCharcoal;

@@ -1,5 +1,7 @@
 {% extends '../../layouts/theme.twig' %}
 
+{% set mainLinkAttributes = page == 'index' ? 'aria-current="page"' : 'href="' ~ rootPath ~ 'index.html"' %}
+
 {% block page %}
 	<div class="Page {{ page == 'index' ? ' Page_index' }}" id="page">
 		{% include component('PageHeader') %}

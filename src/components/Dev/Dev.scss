@@ -8,6 +8,8 @@
 }
 
 .Dev__link {
+	--color: currentColor;
+
 	margin-left: 28px;
 	color: $colorDowny;
 	transform: translateY(2px);
@@ -21,8 +23,4 @@
 	@include active {
 		color: rgba($colorPuertoRicoSecondary, 0.3);
 	}
-}
-
-.Dev__logo {
-	--color: currentColor;
 }

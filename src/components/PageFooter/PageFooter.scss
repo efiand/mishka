@@ -4,10 +4,45 @@
 	background-color: $colorWhiteSmoke;
 
 	@include container;
+
+	@include vpTabletDesktop {
+		display: flex;
+		align-items: center;
+		padding-top: 40px;
+		padding-bottom: 45px;
+	}
+}
+
+.PageFooter__mainLink {
+	--color: currentColor;
+
+	margin-right: 30px;
+
+	@include transition("color");
+
+	@include vpMobile {
+		@include visuallyHidden;
+	}
+
+	@include hoverFocus {
+		color: $colorPuertoRicoSecondary;
+	}
+
+	@include active {
+		color: rgba($colorPuertoRicoSecondary, 0.3);
+	}
+}
+
+.PageFooter__logo {
+	display: block;
 }
 
 .PageFooter__socials {
 	margin: 0 auto 12px;
+
+	@include vpTabletDesktop {
+		margin-bottom: 0;
+	}
 }
 
 .PageFooter__dev {
@@ -16,5 +51,9 @@
 	@include vpMobile {
 		padding-top: 20px;
 		border-top: 1px solid $colorWhisperSecondary;
+	}
+
+	@include vpTabletDesktop {
+		margin-left: 30px;
 	}
 }

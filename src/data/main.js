@@ -3,11 +3,17 @@ import { Breakpoint } from '../scripts/constants.js';
 export default () => ({
 	Breakpoint,
 	action: 'https://echo.htmlacademy.ru',
+	alterLogo: {
+		height: 34,
+		image: 'logo-mishka-simple.svg#logo',
+		title: 'На главную страницу',
+		width: 102
+	},
 	bonusText: 'Бесплатная доставка по России',
 	devData: {
 		logo: {
 			height: 35,
-			image: 'logo-htmlacademy.svg#dev',
+			image: 'logo-htmlacademy.svg#logo',
 			width: 27
 		},
 		text: 'Разработано',

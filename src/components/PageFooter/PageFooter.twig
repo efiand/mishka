@@ -1,4 +1,10 @@
 <footer class="PageFooter">
+	<a class="PageFooter__mainLink" {{ mainLinkAttributes }} aria-label="{{ alterLogo.title|punctify }}">
+		<svg class="PageFooter__logo" width="{{ alterLogo.width }}" height="{{ alterLogo.height }}" role="img" focusable="false">
+			<use xlink:href="{{ rootPath }}images/{{ alterLogo.image }}"/>
+		</svg>
+	</a>
+
 	{% include component('Socials') with { bemMix: 'PageFooter__socials', socials } %}
 
 	{% include component('Dev') with devData|merge({ bemMix: 'PageFooter__dev' }) %}

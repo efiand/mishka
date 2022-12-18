@@ -1,11 +1,13 @@
 {% extends '../../layouts/theme.twig' %}
 
 {% block page %}
-	<div class="Page" id="page">
+	<div class="Page {{ page == 'index' ? ' Page_index' }}" id="page">
 		{% include component('PageHeader') %}
 
 		<main class="Page__main Page__main_noJs">
-			{% include component('MainTitle') with pageHeading|merge({ bemMix: 'Page__mainTitle' }) %}
+			{% include component('MainTitle') with pageHeading|merge({
+				bemMix: 'Page__mainTitle' ~ (page != 'index' ? ' Page__decorable Page__decorable_alter')
+			}) %}
 
 			{% block main %}{% endblock %}
 		</main>

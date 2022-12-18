@@ -5,17 +5,41 @@
 	font-size: 27px;
 	line-height: 30px;
 	text-align: center;
-	background-color: $colorWhiteSmoke;
-	background-repeat: no-repeat;
-	background-position: 50% -18px;
-	background-size: 575px;
+	background-color: var(--colorGrey);
 
 	@include container;
 
+	@include vpTabletDesktop {
+		padding-top: 36px;
+		padding-bottom: 80px;
+		font-size: 43px;
+		line-height: 50px;
+	}
+
+	@include vpDesktop {
+		padding-bottom: 103px;
+		font-size: 53px;
+		line-height: 57px;
+	}
+
 	&_promo {
 		min-height: 136px;
-		background-color: $colorSnow;
+		background-repeat: no-repeat;
+		background-position: 50% -18px;
+		background-size: 575px;
 
 		@include customBackground(false);
+
+		@include vpTabletDesktop {
+			min-height: 397px;
+			padding-top: 90px;
+			background-position: 50% -65px;
+			background-size: 1150px;
+		}
+
+		@include vpDesktop {
+			min-height: 371px;
+			padding-top: 93px;
+		}
 	}
 }

@@ -1,7 +1,9 @@
 .PromoLinks {
 	@include vpTabletDesktop {
+		margin-top: -5px;
 		padding-right: 50px;
 		padding-left: 50px;
+		background-image: linear-gradient(transparent 5px, var(--colorGrey) 5px);
 	}
 
 	@include vpDesktop {
@@ -12,12 +14,19 @@
 
 .PromoLinks__list {
 	@include listReset;
+
+	@include vpTabletDesktop {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		min-height: 124px;
+	}
 }
 
 .PromoLinks__link {
 	position: relative;
 	display: block;
 	min-height: 48px; // Для иконки
+	margin-top: auto;
 	padding: 24px 50% 31px 30px;
 	font-weight: 700;
 	font-size: 19px;
@@ -27,7 +36,7 @@
 	background-color: $colorDowny;
 	outline-offset: -2px;
 
-	@include transition("padding-bottom, background-color");
+	@include transition("padding");
 
 	&::before {
 		content: "";
@@ -35,28 +44,53 @@
 		background-color: $colorDarkCyan;
 		opacity: 0.5;
 
-		@include transition("opacity");
+		@include transition("opacity, top");
 	}
 
-	@include hoverFocus {
+	&::after {
+		content: "";
+		position: absolute;
+		right: 0;
+		bottom: 100%;
+		left: 0;
+		height: 5px;
+		background-color: inherit;
+		transform: scaleY(0);
+		transform-origin: 50% 100%;
+
+		@include transition("transform");
+	}
+
+	&:hover,
+	&:active {
+		padding-top: 19px;
 		padding-bottom: 36px;
 		background-color: $colorDownySecondary;
 
 		&::before {
 			opacity: 0.7;
 		}
-	}
 
-	@include active {
-		padding-bottom: 36px;
-		background-color: $colorDownySecondary;
-
-		&::before {
-			opacity: 0.3;
+		&::after {
+			transform: scaleY(1);
 		}
 	}
 
-	&_interior::before {
+	@include vpTabletDesktop {
+		padding: 25px 40% 34px 36px;
+		font-size: 20px;
+		line-height: 1.5;
+
+		&:hover,
+		&:active {
+			padding-top: 20px;
+			padding-bottom: 39px;
+		}
+	}
+}
+
+.PromoLinks__link_interior {
+	&::before {
 		top: 23px;
 		right: 36px;
 		width: 40px;
@@ -65,13 +99,56 @@
 		@include mask("interior");
 	}
 
-	&_lego::before {
+	&:hover,
+	&:active {
+		&::before {
+			top: 18px;
+		}
+	}
+
+	@include vpTabletDesktop {
+		&::before {
+			top: 30px;
+		}
+
+		&:hover,
+		&:active {
+			&::before {
+				top: 25px;
+			}
+		}
+	}
+}
+
+.PromoLinks__link_lego {
+	&::before {
 		top: 21px;
 		right: 27px;
 		width: 60px;
 		height: 60px;
 
 		@include mask("lego");
+	}
+
+	&:hover,
+	&:active {
+		&::before {
+			top: 16px;
+		}
+	}
+
+	@include vpTabletDesktop {
+		&::before {
+			top: 32px;
+			right: 32px;
+		}
+
+		&:hover,
+		&:active {
+			&::before {
+				top: 27px;
+			}
+		}
 	}
 }
 

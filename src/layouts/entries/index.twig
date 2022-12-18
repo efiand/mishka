@@ -1,7 +1,9 @@
 {% extends body %}
 
 {% block main %}
-	{% include component('~PromoLinks') with promoLinks|merge({ bemMix: 'Page__promoLinks' }) %}
+	{% include component('~PromoLinks') with promoLinks|merge({
+		bemMix: 'Page__promoLinks' ~ (page == 'index' ? ' Page__decorable Page__decorable_alter')
+	}) %}
 
 	{% include component('~GoodSection') with weekGood|merge({ bemMix: 'Page__goodSection' }) %}
 

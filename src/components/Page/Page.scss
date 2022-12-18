@@ -1,4 +1,6 @@
 .Page {
+	--colorGrey: #{$colorWhiteSmoke};
+
 	display: grid;
 	grid-template-rows: min-content 1fr min-content;
 	min-height: 100vh;
@@ -75,8 +77,38 @@
 		top: 0;
 		right: 0;
 		left: 0;
+		z-index: 1;
 		height: 6px;
 		background-image: url("#{$pathSprite}#waves");
+		background-repeat: repeat-x;
 		background-size: 320px 6px;
+	}
+
+	&_alter::before {
+		top: auto;
+		bottom: 0;
+		height: 17px;
+		background-image: url("#{$pathSprite}#waves-white");
+		background-size: 770px 24px;
+
+		@include vpMobile {
+			display: none;
+		}
+
+		@include vpDesktop {
+			height: 23px;
+			background-size: 1150px 34px;
+		}
+	}
+}
+
+.Page_index {
+	--colorGrey: #{$colorSnow};
+
+	.Page__decorable_alter::before {
+		@include vpDesktop {
+			background-position: 50% 0;
+			background-size: 1250px 37px;
+		}
 	}
 }

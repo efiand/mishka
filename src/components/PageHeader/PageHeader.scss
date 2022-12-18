@@ -7,18 +7,85 @@
 		z-index: 1;
 		border-bottom: 1px solid $colorWhisper;
 	}
+
+	@include vpTabletDesktop {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+
+.PageHeader__logo {
+	display: table;
+	order: -2;
+	margin: 0 auto;
+
+	@include vpTablet {
+		margin-left: 26px;
+	}
 }
 
 .PageHeader__menu {
+	box-sizing: border-box;
+
 	@include listReset;
 
 	@include vpMobile {
 		display: none;
 	}
+
+	@include vpTabletDesktop {
+		display: flex;
+		flex-wrap: wrap;
+		align-content: flex-start;
+	}
+
+	&_main {
+		@include vpTablet {
+			width: 50%;
+			padding-left: 13px;
+			background-color: var(--colorGrey);
+			border-top: 1px solid rgba($colorBlack, 0.1);
+		}
+
+		@include vpDesktop {
+			order: -3;
+			width: calc(50% - 100px);
+			padding-left: calc(50% - 560px);
+		}
+	}
+
+	&_services {
+		@include vpTabletDesktop {
+			justify-content: flex-end;
+			order: -1;
+			width: calc(100% - 184px);
+			padding-right: 15px;
+		}
+
+		@include vpDesktop {
+			width: calc(50% - 100px);
+			padding-right: calc(50% - 560px);
+		}
+	}
+
+	&_additions {
+		@include vpTablet {
+			display: none;
+		}
+
+		@include vpDesktop {
+			width: 50%;
+			padding-left: $paddingFluid;
+			background-color: var(--colorGrey);
+			border-top: 1px solid rgba($colorBlack, 0.1);
+		}
+	}
 }
 
 .PageHeader__link {
 	display: block;
+	box-sizing: border-box;
+	height: 100%;
 	padding: 27px 30px 27px 76px;
 	font-weight: 700;
 	font-size: 17px;
@@ -37,19 +104,31 @@
 		color: rgba($colorBlack, 0.3);
 	}
 
-	&_iconable {
-		position: relative;
+	@include vpTabletDesktop {
+		border-top: none;
+	}
 
-		&::before {
-			content: "";
-			position: absolute;
-			top: 32px;
-			left: 32px;
-			height: 18px;
-			background-color: rgba($colorBlack, 0.2);
-
-			@include transition("background-color");
+	&_main {
+		@include vpTablet {
+			margin-left: 37px;
+			padding: 20px 0;
+			font-size: 15px;
 		}
+
+		@include vpDesktop {
+			padding: 32px 35px;
+			border-right: 1px solid rgba($colorBlack, 0.1);
+		}
+	}
+
+	&_last {
+		@include vpDesktop {
+			border-right: none;
+		}
+	}
+
+	&_services {
+		position: relative;
 
 		@include hoverFocus {
 			&::before {
@@ -62,12 +141,38 @@
 				background-color: rgba($colorDowny, 0.3);
 			}
 		}
+
+		@include vpTabletDesktop {
+			padding: 32px 35px 32px 83px;
+			border-left: 1px solid rgba($colorBlack, 0.1);
+		}
 	}
 
-	&_search::before {
-		width: 18px;
+	&_services::before {
+		content: "";
+		position: absolute;
+		top: 32px;
+		left: 32px;
+		height: 18px;
+		background-color: rgba($colorBlack, 0.2);
 
-		@include mask("search");
+		@include transition("background-color");
+
+		@include vpTabletDesktop {
+			top: 35px;
+		}
+	}
+
+	&_search {
+		&::before {
+			width: 18px;
+
+			@include mask("search");
+		}
+
+		@include vpTabletDesktop {
+			padding-right: 0;
+		}
 	}
 
 	&_cart::before {
@@ -76,11 +181,42 @@
 
 		@include mask("cart");
 	}
+
+	&_additions {
+		@include vpDesktop {
+			margin-right: 62px;
+			padding: 20px 0;
+			font-size: 15px;
+		}
+	}
+}
+
+.PageHeader__linkTitle {
+	&_search {
+		@include vpTabletDesktop {
+			@include visuallyHidden;
+		}
+	}
 }
 
 .PageHeader__description {
+	box-sizing: border-box;
+	width: 50%;
+	margin: 0;
+	padding: 20px 50px;
+	font-size: 15px;
+	line-height: 24px;
+	text-align: right;
+	color: $colorCharcoal;
+	background-color: var(--colorGrey);
+	border-top: 1px solid rgba($colorBlack, 0.1);
+
 	@include vpMobile {
 		display: none;
+	}
+
+	@include vpDesktop {
+		padding-right: $paddingFluid;
 	}
 }
 

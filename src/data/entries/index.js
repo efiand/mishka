@@ -81,8 +81,8 @@ export default ({ bonusText, pageData, project }) => ({
 	},
 	promoLinks: {
 		list: [
-			{ icon: 'interior', title: 'Предметы интерьера', url: '#!' },
-			{ icon: 'lego', title: 'Детские игрушки', url: '#!' }
+			{ icon: 'interior', title: 'Предметы<br>интерьера', url: '#!' },
+			{ icon: 'lego', title: 'Детские<br>игрушки', url: '#!' }
 		],
 		title: 'Промо-товары'
 	},

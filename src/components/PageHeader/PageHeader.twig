@@ -1,4 +1,4 @@
-<header class="PageHeader PageHeader_noJs {{ bemMix }}">
+<header class="PageHeader PageHeader_noJs">
 	{% include component('Logo') with { bemMix: 'PageHeader__logo' } %}
 
 	<button class="PageHeader__toggler" type="button">
@@ -13,8 +13,12 @@
 		<ul class="PageHeader__menu PageHeader__menu_{{ menu.alias }}">
 			{% for link in menu.list %}
 				<li>
-					<a class="PageHeader__link {{ link.icon ? 'PageHeader__link_iconable PageHeader__link_' ~ link.icon }}" href="{{ link.url }}">
-						<span class="PageHeader__linkTitle">{{ link.title}}</span>
+					{% set iconClass = link.icon ? 'PageHeader__link_' ~ link.icon %}
+					{% set lastClass = loop.last and menu.alias == 'main' ? 'PageHeader__link_last' %}
+					<a class="PageHeader__link PageHeader__link_{{ menu.alias }} {{ iconClass }} {{ lastClass }}" href="{{ link.url }}">
+						<span class="PageHeader__linkTitle {{ link.icon ? 'PageHeader__linkTitle_' ~ link.icon }}">
+							{{ link.title }}
+						</span>
 					</a>
 				</li>
 			{% endfor %}

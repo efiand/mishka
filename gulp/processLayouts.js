@@ -13,17 +13,23 @@ const twigConfig = {
 		{
 			func: punctify,
 			name: 'punctify'
+		},
+		{
+			func(str, [pattern]) {
+				return str.includes(pattern);
+			},
+			name: 'includes'
 		}
 	],
 	functions: [
 		{
-			name: 'component',
 			func(name) {
 				const relative = name.slice(0, 1) === '~' ? '../components/' : '';
 				const Component = name.replace(/^~/, '');
 
 				return `../${relative}${Component}/${Component}.twig`;
-			}
+			},
+			name: 'component'
 		}
 	]
 };

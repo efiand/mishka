@@ -1,10 +1,6 @@
 .Logo {
 	padding: 22px;
 
-	&:not([href]) {
-		pointer-events: none;
-	}
-
 	@include defaultInteractive;
 
 	@include vpTablet {

@@ -15,7 +15,8 @@
 				<li>
 					{% set iconClass = link.icon ? 'PageHeader__link_' ~ link.icon %}
 					{% set lastClass = loop.last and menu.alias == 'main' ? 'PageHeader__link_last' %}
-					<a class="PageHeader__link PageHeader__link_{{ menu.alias }} {{ iconClass }} {{ lastClass }}" href="{{ link.url }}">
+					{% set linkAttributes = link.url|includes(page) ? 'aria-current="page"' : 'href="' ~ link.url ~ '"' %}
+					<a class="PageHeader__link PageHeader__link_{{ menu.alias }} {{ iconClass }} {{ lastClass }}" {{ linkAttributes }}>
 						<span class="PageHeader__linkTitle {{ link.icon ? 'PageHeader__linkTitle_' ~ link.icon }}">
 							{{ link.title }}
 						</span>

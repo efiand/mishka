@@ -1,11 +1,45 @@
+.Reviews {
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	@include customBackground(false);
+
+	@include vpMobile {
+		background-size: 0;
+	}
+
+	@include vpTabletDesktop {
+		display: grid;
+		grid-template-rows: min-content 1fr min-content;
+		grid-template-columns: 1fr 175px;
+		gap: 38px;
+		align-items: start;
+		padding-top: 79px;
+		padding-bottom: 49px;
+	}
+}
+
 .Reviews__heading {
+	order: -2;
 	margin: 0 0 14px;
+
+	@include vpTabletDesktop {
+		margin: 4px 0 0;
+	}
 }
 
 .Reviews__slider {
 	width: var(--width, 100%);
-	margin-bottom: 30px;
 	overflow: hidden;
+
+	@include vpMobile {
+		margin-bottom: 30px;
+	}
+
+	@include vpTabletDesktop {
+		grid-row: 2 / -1;
+		grid-column: 1 / -1;
+	}
 }
 
 .Reviews__list {
@@ -31,8 +65,18 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 1px;
-	margin-bottom: 38px;
 	border: 1px solid $colorWhisper;
+
+	@include vpMobile {
+		margin-bottom: 38px;
+	}
+
+	@include vpTabletDesktop {
+		grid-row: -2 / -1;
+		grid-column: -2 / -1;
+		background-color: $colorWhite;
+		border: none;
+	}
 
 	&::before {
 		content: "";
@@ -72,6 +116,7 @@
 
 .Reviews__button {
 	display: block;
+	order: -1;
 }
 
 .Reviews_noJs {

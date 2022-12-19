@@ -24,12 +24,21 @@
 
 .Page__promoLinks {
 	margin-bottom: 31px;
+
+	@include vpTabletDesktop {
+		margin-top: -5px;
+		margin-bottom: 46px;
+	}
 }
 
 .Page__goodSection {
 	margin-bottom: 36px;
 
 	@include container;
+
+	@include vpTabletDesktop {
+		margin-bottom: 52px;
+	}
 }
 
 .Page__iconableList {
@@ -37,12 +46,21 @@
 	padding-top: 37px;
 
 	@include container;
+
+	@include vpTabletDesktop {
+		margin-bottom: 82px;
+		padding-top: 73px;
+	}
 }
 
 .Page__reviews {
 	margin-bottom: 45px;
 
 	@include container;
+
+	@include vpTabletDesktop {
+		margin-bottom: 68px;
+	}
 }
 
 .Page__contacts {
@@ -100,17 +118,24 @@
 		background-image: url("#{$pathSprite}#waves");
 		background-repeat: repeat-x;
 		background-size: 320px 6px;
+
+		@include vpTabletDesktop {
+			height: 17px;
+			background-size: 772px 17px;
+		}
 	}
 
 	&_alter::before {
 		top: auto;
 		bottom: 0;
-		height: 17px;
 		background-image: url("#{$pathSprite}#waves-white");
-		background-size: 770px 24px;
 
 		@include vpMobile {
 			display: none;
+		}
+
+		@include vpTabletDesktop {
+			background-size: 770px 24px;
 		}
 
 		@include vpDesktop {

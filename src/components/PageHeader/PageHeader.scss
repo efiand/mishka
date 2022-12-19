@@ -17,6 +17,7 @@
 .PageHeader__logo {
 	display: table;
 	order: -2;
+	max-width: 156px;
 	margin: 0 auto;
 
 	@include vpTablet {

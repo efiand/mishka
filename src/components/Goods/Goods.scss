@@ -1,6 +1,22 @@
 .Goods__list {
 	display: grid;
+	grid-template-columns: repeat(auto-fill, 260px);
+	justify-content: center;
 	gap: 30px;
 
 	@include listReset;
+
+	@include vpTabletDesktop {
+		grid-template-columns: 1fr;
+		gap: 54px;
+	}
+
+	@include vpDesktop {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 51px;
+	}
+}
+
+.Goods__card {
+	height: 100%;
 }

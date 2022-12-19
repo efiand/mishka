@@ -1,5 +1,5 @@
 <article class="GoodCard {{ bemMix }}">
-	<a href="{{ url }}">
+	<a class="GoodCard__pictureLink" href="{{ url }}">
 		{% include component('Picture') with imageSet|merge({ bemMix: 'GoodCard__picture' }) %}
 	</a>
 

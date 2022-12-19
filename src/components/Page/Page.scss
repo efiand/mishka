@@ -60,12 +60,30 @@
 	padding-top: 30px;
 
 	@include container;
+
+	@include vpTabletDesktop {
+		margin-bottom: 53px;
+		padding-top: 74px;
+	}
+
+	@include vpDesktop {
+		margin-bottom: 56px;
+		padding-top: 122px;
+	}
 }
 
 .Page__process {
 	margin-bottom: 58px;
 
 	@include container;
+
+	@include vpTabletDesktop {
+		margin-bottom: 64px;
+	}
+
+	@include vpDesktop {
+		margin-bottom: 105px;
+	}
 }
 
 .Page__decorable {

@@ -1,3 +1,24 @@
+.VideoCard {
+	@include vpTabletDesktop {
+		display: grid;
+	}
+
+	@include vpDesktop {
+		grid-template-rows: min-content 1fr;
+		grid-template-columns: 682px 1fr;
+	}
+}
+
+.VideoCard__video {
+	@include vpTabletDesktop {
+		order: -1;
+	}
+
+	@include vpDesktop {
+		grid-row: span 2;
+	}
+}
+
 .VideoCard__heading {
 	position: relative;
 	margin: 0;
@@ -5,20 +26,50 @@
 	overflow-wrap: anywhere;
 	border: 1px solid $colorWhisper;
 
+	@include vpTabletDesktop {
+		padding: 40px 30px 0 106px;
+		border-bottom: none;
+	}
+
+	@include vpDesktop {
+		padding: 95px 56px 0 80px;
+	}
+
 	&::before {
 		content: "";
 		position: absolute;
-		top: 34px;
+		top: 50%;
 		left: 34px;
 		width: 32px;
 		height: 22px;
 		background-image: url("#{$pathSprite}#camera");
+		transform: translateY(-14px);
+
+		@include vpTabletDesktop {
+			left: 41px;
+			transform: translateY(6px);
+		}
+
+		@include vpDesktop {
+			top: 46px;
+			left: 80px;
+			transform: none;
+		}
 	}
 }
 
 .VideoCard__content {
 	padding: 35px 33px 32px;
 	border: 1px solid $colorWhisper;
+
+	@include vpTabletDesktop {
+		padding: 24px 40px 44px;
+		border-top: none;
+	}
+
+	@include vpDesktop {
+		padding: 28px 56px 44px 80px;
+	}
 }
 
 .VideoCard__text {
@@ -26,6 +77,15 @@
 	font-size: 13px;
 	line-height: 24px;
 	color: $colorCharcoal;
+
+	@include vpTabletDesktop {
+		font-size: 15px;
+		line-height: 2;
+	}
+
+	@include vpDesktop {
+		margin-bottom: 51px;
+	}
 }
 
 .VideoCard__button {

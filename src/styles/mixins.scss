@@ -111,9 +111,15 @@
 	}
 }
 
-@mixin focus {
+@mixin focus($within: false) {
 	&:focus-visible {
 		@content;
+	}
+
+	@if $within {
+		&:focus-within {
+			@content;
+		}
 	}
 
 	@supports not selector(:focus-visible) {
@@ -123,12 +129,12 @@
 	}
 }
 
-@mixin hoverFocus {
+@mixin hoverFocus($within: false) {
 	@include hover {
 		@content;
 	}
 
-	@include focus {
+	@include focus($within) {
 		@content;
 	}
 }

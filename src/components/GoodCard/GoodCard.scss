@@ -1,10 +1,39 @@
+.GoodCard {
+	display: grid;
+	grid-template-rows: min-content 1fr;
+
+	@include vpTablet {
+		grid-template-columns: 334px 1fr;
+	}
+}
+
+.GoodCard__pictureLink {
+	@include defaultInteractive;
+}
+
 .GoodCard__body {
+	display: flex;
+	flex-direction: column;
 	padding: 26px 28px;
 	border: 1px solid $colorWhisper;
+
+	@include transition("box-shadow");
+
+	@include hoverFocus(true) {
+		box-shadow: $shadowCardFront;
+	}
+
+	@include active {
+		box-shadow: $shadowCard;
+	}
 }
 
 .GoodCard__heading {
 	margin: 0 0 6px;
+
+	@include vpTablet {
+		padding-left: 4px;
+	}
 }
 
 .GoodCard__link {
@@ -18,18 +47,35 @@
 	font-size: 13px;
 	line-height: 30px;
 	color: $colorCharcoal;
+
+	@include vpTablet {
+		padding-left: 4px;
+	}
+
+	@include vpDesktop {
+		margin-bottom: 12px;
+	}
 }
 
 .GoodCard__item {
 	display: inline;
 	margin: 0;
+
+	@include vpTabletDesktop {
+		font-size: 15px;
+	}
 }
 
 .GoodCard__footer {
 	display: flex;
 	justify-content: space-between;
+	margin-top: auto;
 	padding-top: 22px;
 	border-top: 1px solid $colorWhisper;
+
+	@include vpTablet {
+		padding-left: 4px;
+	}
 }
 
 .GoodCard__price {
@@ -37,6 +83,10 @@
 	font-weight: 700;
 	font-size: 15px;
 	line-height: 24px;
+
+	@include vpTabletDesktop {
+		font-size: 1rem;
+	}
 }
 
 .GoodCard__buttonCart {

@@ -6,6 +6,15 @@
 
 	@include customBackground(false);
 
+	@include vpTabletDesktop {
+		padding-top: calc(4550% / 66.8);
+		background-position: 50%;
+	}
+
+	@include vpTabletDesktop {
+		padding-top: calc(4550% / 68.3);
+	}
+
 	&_active {
 		background-size: 0;
 

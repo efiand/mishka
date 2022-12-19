@@ -28,7 +28,7 @@ export default ({ project, slogan }) => ({
 					{ key: 'диаметр', value: '30 см' },
 					{ key: 'высота', value: '30 см' }
 				],
-				heading: 'Большая корзинка для игрушек',
+				heading: 'Большая корзинка для&nbsp;игрушек',
 				price: '1 500 руб.'
 			}
 		].map(mapGood)

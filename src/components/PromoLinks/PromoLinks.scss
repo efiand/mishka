@@ -153,15 +153,30 @@
 }
 
 .PromoLinks__item {
-	&:nth-child(2n) .PromoLinks__link {
-		background-color: $colorPuertoRico;
+	@mixin alter {
+		.PromoLinks__link {
+			background-color: $colorPuertoRico;
 
-		@include hoverFocus {
-			background-color: $colorPuertoRicoSecondary;
+			@include hoverFocus {
+				background-color: $colorPuertoRicoSecondary;
+			}
+
+			@include active {
+				background-color: $colorPuertoRicoSecondary;
+			}
 		}
+	}
 
-		@include active {
-			background-color: $colorPuertoRicoSecondary;
+	@include vpMobile {
+		&:nth-child(2n) {
+			@include alter;
+		}
+	}
+
+	@include vpTabletDesktop {
+		&:nth-child(4n-1),
+		&:nth-child(4n-2) {
+			@include alter;
 		}
 	}
 }

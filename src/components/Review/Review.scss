@@ -14,7 +14,7 @@
 }
 
 .Review__author {
-	max-width: 300px;
+	max-width: var(--cite-width, 100%);
 	margin-top: auto;
 	font-weight: 700;
 	font-style: normal;
@@ -27,8 +27,7 @@
 }
 
 .Review__authorLink {
-	display: inline-block;
-	vertical-align: baseline;
+	display: table;
 	margin-top: 3px;
 	font-weight: 400;
 	line-height: 30px;

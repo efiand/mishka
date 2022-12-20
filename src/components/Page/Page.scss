@@ -67,6 +67,11 @@
 	margin-bottom: 40px;
 	padding-top: 44px;
 
+	@include vpTabletDesktop {
+		margin-bottom: 57px;
+		padding-top: 63px;
+	}
+
 	@include vpDesktop {
 		padding-right: $paddingFluid;
 		padding-left: $paddingFluid;

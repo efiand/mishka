@@ -9,6 +9,8 @@
 	}
 
 	@include vpTabletDesktop {
+		--cite-width: calc(100% - 213px);
+
 		display: grid;
 		grid-template-rows: min-content 1fr min-content;
 		grid-template-columns: 1fr 175px;

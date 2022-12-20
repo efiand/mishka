@@ -3,6 +3,7 @@
 	padding: 0 30px;
 
 	@include vpTabletDesktop {
+		margin-bottom: 48px;
 		padding-right: 50px;
 		padding-left: 50px;
 	}
@@ -10,21 +11,44 @@
 
 .Contacts__heading {
 	margin: 0 0 28px;
+
+	@include vpTabletDesktop {
+		padding: 22px 72px 22px 0;
+		background-image: url("#{$pathSprite}#flag");
+		background-repeat: no-repeat;
+		background-position: top -7px right 3px;
+		background-size: 47px 95px;
+	}
 }
 
 .Contacts__details {
 	display: grid;
-	grid-template-columns: 60px 1fr;
-	gap: 30px 18px;
+	grid-template-columns: 78px 1fr;
+	gap: 30px 0;
 	margin: 0;
 	font-size: 14px;
 	line-height: 30px;
 	color: $colorCharcoal;
+
+	@include vpTabletDesktop {
+		grid-template-columns: 78px 1fr 78px 1fr;
+		font-size: 17px;
+	}
 }
 
 .Contacts__item {
 	margin: 0;
 	overflow-wrap: anywhere;
+
+	&:nth-child(2n + 1) {
+		padding-right: 18px;
+	}
+
+	&:nth-child(2n) {
+		@include vpTabletDesktop {
+			padding-right: 18px;
+		}
+	}
 
 	a {
 		padding-bottom: 2px;
@@ -42,15 +66,30 @@
 			color: $colorPuertoRicoSecondary;
 			border-color: rgba($colorPuertoRicoSecondary, 0.1);
 		}
+
+		@include vpTabletDesktop {
+			padding-bottom: 3px;
+		}
 	}
 }
 
 .Contacts__map {
 	height: 454px;
 	margin-bottom: 42px;
+
+	@include vpTabletDesktop {
+		height: 457px;
+		margin-bottom: 55px;
+	}
 }
 
 .Contacts__button {
 	display: block;
 	margin: 0 30px;
+
+	@include vpTabletDesktop {
+		display: table;
+		min-width: 230px;
+		margin: 0 auto;
+	}
 }

@@ -29,6 +29,10 @@
 		margin-top: -5px;
 		margin-bottom: 46px;
 	}
+
+	@include vpDesktop {
+		margin-bottom: 66px;
+	}
 }
 
 .Page__goodSection {
@@ -38,6 +42,10 @@
 
 	@include vpTabletDesktop {
 		margin-bottom: 52px;
+	}
+
+	@include vpDesktop {
+		margin-bottom: 72px;
 	}
 }
 
@@ -50,6 +58,11 @@
 	@include vpTabletDesktop {
 		margin-bottom: 82px;
 		padding-top: 73px;
+	}
+
+	@include vpDesktop {
+		margin-bottom: 90px;
+		padding-top: 92px;
 	}
 }
 
@@ -73,8 +86,8 @@
 	}
 
 	@include vpDesktop {
-		padding-right: $paddingFluid;
-		padding-left: $paddingFluid;
+		margin-bottom: 104px;
+		padding: 93px $paddingFluid 0;
 	}
 }
 
@@ -115,23 +128,38 @@
 	&::before {
 		content: "";
 		position: absolute;
-		top: 0;
 		right: 0;
 		left: 0;
 		z-index: 1;
 		height: 6px;
-		background-image: url("#{$pathSprite}#waves");
 		background-repeat: repeat-x;
 		background-size: 320px 6px;
 
 		@include vpTabletDesktop {
 			height: 17px;
+		}
+
+		@include vpDesktop {
+			height: 23px;
+		}
+	}
+
+	&:not(&_alter)::before {
+		top: 0;
+		background-image: url("#{$pathSprite}#waves");
+
+		@include vpTabletDesktop {
 			background-size: 772px 17px;
+		}
+
+		@include vpDesktop {
+			background-repeat: no-repeat;
+			background-position: 50%;
+			background-size: 1050px 23px;
 		}
 	}
 
 	&_alter::before {
-		top: auto;
 		bottom: 0;
 		background-image: url("#{$pathSprite}#waves-white");
 
@@ -144,7 +172,6 @@
 		}
 
 		@include vpDesktop {
-			height: 23px;
 			background-size: 1150px 34px;
 		}
 	}

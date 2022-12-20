@@ -4,22 +4,20 @@
 		<p class="GoodSection__label">{{ label }}</p>
 	</header>
 
-	<div class="GoodSection__body">
-		<p class="GoodSection__description">{{ description }}</p>
+	<p class="GoodSection__description">{{ description }}</p>
 
-		<dl class="GoodSection__details">
-			{% for detail in details %}
-				<dt class="GoodSection__item">{{ detail.key }}:</dt>
-				<dd class="GoodSection__item">{{ detail.value }}</dd>
-			{% endfor %}
-		</dl>
+	<dl class="GoodSection__details">
+		{% for detail in details %}
+			<dt class="GoodSection__item">{{ detail.key }}:</dt>
+			<dd class="GoodSection__item">{{ detail.value }}</dd>
+		{% endfor %}
+	</dl>
 
-		{% include component('Picture') with imageSet|merge({ bemMix: 'GoodSection__picture' }) %}
+	{% include component('Picture') with imageSet|merge({ bemMix: 'GoodSection__picture' }) %}
 
-		<p class="GoodSection__price">{{ price }}</p>
+	<p class="GoodSection__price">{{ price }}</p>
 
-		<a class="GoodSection__button Button" href="#good-{{ id }}">
-			{{ linkTitle }}
-		</a>
-	</div>
+	<a class="GoodSection__button Button" href="#good-{{ id }}">
+		{{ linkTitle }}
+	</a>
 </section>

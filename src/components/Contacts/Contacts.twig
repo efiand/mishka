@@ -1,14 +1,12 @@
 <section class="Contacts {{ bemMix }}">
-	<div class="Contacts__body" data-balloon="map">
-		<h2 class="Contacts__heading Heading">{{ heading }}</h2>
+	<h2 class="Contacts__heading Heading">{{ heading }}</h2>
 
-		<dl class="Contacts__details">
-			{% for detail in details %}
-				<dt class="Contacts__item">{{ detail.key }}:</dt>
-				<dd class="Contacts__item">{{ detail.value }}</dd>
-			{% endfor %}
-		</dl>
-	</div>
+	<dl class="Contacts__details">
+		{% for detail in details %}
+			<dt class="Contacts__item" data-balloon="map">{{ detail.key }}:</dt>
+			<dd class="Contacts__item" data-balloon="map">{{ detail.value }}</dd>
+		{% endfor %}
+	</dl>
 
 	{% include component('Map') with { bemMix: 'Contacts__map', mapSet } %}
 

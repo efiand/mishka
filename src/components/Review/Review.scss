@@ -1,6 +1,10 @@
 .Review {
 	display: flex;
 	flex-direction: column;
+
+	@include vpDesktop {
+		padding-left: 175px;
+	}
 }
 
 .Review__text {
@@ -10,6 +14,10 @@
 
 	@include vpTabletDesktop {
 		margin-bottom: 60px;
+	}
+
+	@include vpDesktop {
+		margin-bottom: 42px;
 	}
 }
 
@@ -21,7 +29,7 @@
 	font-size: 17px;
 	line-height: 24px;
 
-	@include vpTabletDesktop {
+	@include vpTablet {
 		font-size: 18px;
 	}
 }

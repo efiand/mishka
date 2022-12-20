@@ -1,23 +1,29 @@
-.Contacts__body {
-	margin-bottom: 62px;
-	padding: 0 30px;
-
-	@include vpTabletDesktop {
-		margin-bottom: 48px;
-		padding-right: 50px;
-		padding-left: 50px;
+.Contacts {
+	@include vpDesktop {
+		display: grid;
+		grid-template-rows: min-content 1fr min-content;
+		grid-template-columns: 1fr 527px;
+		gap: 0 30px;
+		align-items: start;
 	}
 }
 
 .Contacts__heading {
 	margin: 0 0 28px;
+	padding: 0 30px;
 
 	@include vpTabletDesktop {
-		padding: 22px 72px 22px 0;
+		padding: 22px 122px 22px 50px;
 		background-image: url("#{$pathSprite}#flag");
 		background-repeat: no-repeat;
-		background-position: top -7px right 3px;
+		background-position: top -7px right 53px;
 		background-size: 47px 95px;
+	}
+
+	@include vpDesktop {
+		margin-bottom: 12px;
+		padding: 80px 0 22px 175px;
+		background-position: 63px 55px;
 	}
 }
 
@@ -25,14 +31,24 @@
 	display: grid;
 	grid-template-columns: 78px 1fr;
 	gap: 30px 0;
-	margin: 0;
+	margin: 0 0 62px;
+	padding: 0 30px;
 	font-size: 14px;
 	line-height: 30px;
 	color: $colorCharcoal;
 
-	@include vpTabletDesktop {
+	@include vpTablet {
 		grid-template-columns: 78px 1fr 78px 1fr;
+		padding: 0 50px;
+	}
+
+	@include vpTabletDesktop {
+		margin-bottom: 48px;
 		font-size: 17px;
+	}
+
+	@include vpDesktop {
+		padding: 0 0 0 175px;
 	}
 }
 
@@ -81,6 +97,12 @@
 		height: 457px;
 		margin-bottom: 55px;
 	}
+
+	@include vpDesktop {
+		grid-row: 1 / 4;
+		grid-column: 2 / -1;
+		margin-bottom: 0;
+	}
 }
 
 .Contacts__button {
@@ -91,5 +113,9 @@
 		display: table;
 		min-width: 230px;
 		margin: 0 auto;
+	}
+
+	@include vpDesktop {
+		margin-left: 175px;
 	}
 }

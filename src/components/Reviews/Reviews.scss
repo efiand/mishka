@@ -1,12 +1,9 @@
 .Reviews {
+	position: relative;
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: 0;
 
 	@include customBackground(false);
-
-	@include vpMobile {
-		background-size: 0;
-	}
 
 	@include vpTabletDesktop {
 		--cite-width: calc(100% - 213px);
@@ -18,6 +15,29 @@
 		align-items: start;
 		padding-top: 79px;
 		padding-bottom: 49px;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			z-index: -1;
+			width: 350px;
+			background-image: inherit;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	}
+
+	@include vpDesktop {
+		gap: 34px;
+		padding-bottom: 98px;
+		background-position: var(--bg-left) 0;
+
+		&::before {
+			left: $paddingFluid;
+		}
 	}
 }
 
@@ -27,6 +47,11 @@
 
 	@include vpTabletDesktop {
 		margin: 4px 0 0;
+	}
+
+	@include vpDesktop {
+		margin-top: 0;
+		padding-left: 175px;
 	}
 }
 

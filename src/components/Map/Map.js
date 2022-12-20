@@ -32,7 +32,14 @@ export default class Map {
 			const { id } = this._mapElement;
 			const map = new ymaps.Map(id, this._data.initials);
 			const [hints, placemark] = this._data.placemark;
-			hints.balloonContentBody = this._data.pageElement.querySelector(`[data-balloon="${id}"]`).innerHTML;
+
+			const balloonElements = this._data.pageElement.querySelectorAll(`[data-balloon="${id}"]`);
+			const balloonContent = Array.from(balloonElements)
+				.map(({ innerHTML }) => `<div>${innerHTML}</div>`)
+				.join('');
+			if (balloonContent) {
+				hints.balloonContentBody = balloonContent;
+			}
 
 			map.geoObjects.add(new ymaps.Placemark(map.getCenter(), hints, placemark));
 			map.behaviors.disable('scrollZoom');

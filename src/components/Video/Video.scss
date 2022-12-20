@@ -11,7 +11,7 @@
 		background-position: 50%;
 	}
 
-	@include vpTabletDesktop {
+	@include vpDesktop {
 		padding-top: calc(4550% / 68.3);
 	}
 

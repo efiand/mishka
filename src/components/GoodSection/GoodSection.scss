@@ -1,18 +1,35 @@
 .GoodSection {
-	display: grid;
-	gap: 18px;
-
 	@include vpTabletDesktop {
-		gap: 38px;
+		display: grid;
+		grid-template-rows: min-content min-content 1fr min-content min-content;
+		grid-template-columns: 1fr 334px;
+		gap: 0 42px;
+	}
+
+	@include vpDesktop {
+		grid-template-columns: 1fr 525px;
+		gap: 35px 58px;
 	}
 }
 
 .GoodSection__header {
+	margin-bottom: 18px;
+
 	@include vpTabletDesktop {
 		display: grid;
 		grid-template-columns: 1fr 128px;
+		grid-row: 1 / 2;
+		grid-column: 1 / -1;
 		align-items: center;
 		gap: 42px;
+		margin-bottom: 38px;
+	}
+
+	@include vpDesktop {
+		grid-template-columns: 165px 1fr;
+		gap: 10px;
+		margin-bottom: 0;
+		padding-top: 61px;
 	}
 }
 
@@ -22,6 +39,10 @@
 	@include vpTabletDesktop {
 		margin-bottom: 0;
 	}
+
+	@include vpDesktop {
+		z-index: 1;
+	}
 }
 
 .GoodSection__label {
@@ -30,20 +51,17 @@
 	font-size: 17px;
 	line-height: 20px;
 	text-transform: uppercase;
+	overflow-wrap: anywhere;
 	color: $colorDowny;
 
 	@include vpTabletDesktop {
 		line-height: 1;
 		text-align: center;
 	}
-}
 
-.GoodSection__body {
-	@include vpTabletDesktop {
-		display: grid;
-		grid-template-rows: min-content 1fr min-content min-content;
-		grid-template-columns: 1fr 334px;
-		gap: 0 42px;
+	@include vpDesktop {
+		order: -1;
+		padding: 0 25px 8px;
 	}
 }
 
@@ -55,6 +73,11 @@
 		margin-bottom: 41px;
 		line-height: 30px;
 	}
+
+	@include vpDesktop {
+		margin-bottom: 18px;
+		margin-left: 175px;
+	}
 }
 
 .GoodSection__details {
@@ -65,6 +88,10 @@
 	font-size: 15px;
 	line-height: 20px;
 	color: $colorCharcoal;
+
+	@include vpDesktop {
+		margin-left: 175px;
+	}
 }
 
 .GoodSection__item {
@@ -80,9 +107,14 @@
 	}
 
 	@include vpTabletDesktop {
-		grid-row: 1 / 5;
+		grid-row: 2 / -1;
 		grid-column: 2 / -1;
 		padding-top: 12px;
+	}
+
+	@include vpDesktop {
+		grid-row: 1 / -1;
+		padding-top: 0;
 	}
 }
 
@@ -98,8 +130,17 @@
 		margin-bottom: 32px;
 		font-size: 20px;
 	}
+
+	@include vpDesktop {
+		margin-bottom: -2px;
+		margin-left: 175px;
+	}
 }
 
 .GoodSection__button {
 	display: block;
+
+	@include vpDesktop {
+		margin-left: 175px;
+	}
 }

@@ -4,6 +4,10 @@
 	@include vpTabletDesktop {
 		margin-bottom: 41px;
 	}
+
+	@include vpDesktop {
+		margin: 0 175px 38px;
+	}
 }
 
 .IconableList__list {
@@ -16,6 +20,10 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 52px 0;
+	}
+
+	@include vpDesktop {
+		margin: 0 175px;
 	}
 }
 

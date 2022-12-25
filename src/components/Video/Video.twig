@@ -1,5 +1,5 @@
 <div class="Video Video_active {{ bemMix }}" {{ backgroundSet ? setBg(backgroundSet) }}>
-	<video class="Video__player" poster="{{ poster }}" controls>
+	<video class="Video__player" poster="{{ poster }}" controls {{ not immediately ? 'preload="none"' }}>
 		<source src="video/{{ file }}.m4v">
 		<source src="video/{{ file }}.ogv" type="video/ogg">
 		<source src="video/{{ file }}.webm" type="video/webm">

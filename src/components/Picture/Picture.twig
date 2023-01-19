@@ -22,20 +22,31 @@
 	{% endif %}
 
 	{% if adaptive %}
-		<source
-			media="(min-width: {{ Breakpoint.DESKTOP }}px)"
-			srcset="{{ rootPath }}images/{{ filename }}-desktop.{{ ext }} 1x, {{ rootPath }}images/{{ filename }}-desktop@2x.{{ ext }} 2x"
-		/>
-		<source
-			media="(min-width: {{ Breakpoint.TABLET }}px)"
-			srcset="{{ rootPath }}images/{{ filename }}-tablet.{{ ext }} 1x, {{ rootPath }}images/{{ filename }}-tablet@2x.{{ ext }} 2x"
-		/>
+		{% if ext != 'svg' %}
+			<source
+				media="(min-width: {{ Breakpoint.DESKTOP }}px)"
+				srcset="{{ rootPath }}images/{{ filename }}-desktop.{{ ext }} 1x, {{ rootPath }}images/{{ filename }}-desktop@2x.{{ ext }} 2x"
+			/>
+			<source
+				media="(min-width: {{ Breakpoint.TABLET }}px)"
+				srcset="{{ rootPath }}images/{{ filename }}-tablet.{{ ext }} 1x, {{ rootPath }}images/{{ filename }}-tablet@2x.{{ ext }} 2x"
+			/>
+		{% else %}
+			<source
+				media="(min-width: {{ Breakpoint.DESKTOP }}px)"
+				srcset="{{ rootPath }}images/{{ filename }}-desktop.{{ ext }}"
+			/>
+			<source
+				media="(min-width: {{ Breakpoint.TABLET }}px)"
+				srcset="{{ rootPath }}images/{{ filename }}-tablet.{{ ext }}"
+			/>
+		{% endif %}
 	{% endif %}
 
 	<img
 		class="Picture__image"
 		src="{{ rootPath }}images/{{ filename }}.{{ ext }}"
-		srcset="{{ rootPath }}images/{{ filename }}@2x.{{ ext }} 2x"
+		{{ ext != 'svg' ? 'srcset="' ~ rootPath ~ 'images/' ~ filename ~ '@2x.' ~ ext ~ ' 2x"' }}
 		{{ width ? 'width="' ~ width ~ '"' }}
 		{{ height ? 'height="' ~ height ~ '"' }}
 		{{ alt ? 'alt="' ~ alt|punctify ~ '"' : 'alt="" aria-hidden="true"' }}

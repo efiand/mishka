@@ -29,7 +29,7 @@
 			}
 		},
 		{
-			"files": "*.svelte",
+			"files": "**/*.svelte",
 			"processor": "svelte3/svelte3",
 			"rules": {
 				"one-var": "off",

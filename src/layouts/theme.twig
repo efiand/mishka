@@ -9,11 +9,11 @@
 			{{ project }}{{ title ? ' &gt; ' ~ title }}
 		</title>
 		<meta name="description" content="{{ description|punctify }}">
-		<link rel="stylesheet" href="{{ rootPath }}styles/main.css{{ version }}">
 
 		{% for font in ['opensans-normal-400', 'opensans-normal-700'] %}
 			<link rel="preload" href="{{ rootPath }}fonts/{{ font }}.woff2" as="font" crossorigin="anonymous">
 		{% endfor %}
+		<link rel="stylesheet" href="{{ rootPath }}styles/main.css{{ version }}">
 
 		{# https://realfavicongenerator.net/ #}
 		<link rel="apple-touch-icon" sizes="180x180" href="{{ rootPath }}apple-touch-icon.png">

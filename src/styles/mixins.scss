@@ -146,51 +146,29 @@
 	}
 }
 
-@mixin webpBackground($webp, $fallback) {
-	@if devMode() {
-		background-image: $fallback;
-	} @else {
-		@supports (background-image: $webp) {
-			background-image: $webp;
-		}
+@mixin retinalBackground($bg) {
+	background-image: var(--bg#{$bg});
 
-		@supports not (background-image: $webp) {
-			background-image: $fallback;
-		}
+	@include retina {
+		background-image: var(--bg#{$bg}2x);
 	}
 }
 
 @mixin customBackground($adaptive: true) {
 	@if $adaptive {
 		@include vpMobile {
-			@include webpBackground(var(--bgWebpMobile), var(--bgMobile));
-
-			@include retina {
-				@include webpBackground(var(--bgWebpMobile2x), var(--bgMobile2x));
-			}
+			@include retinalBackground("Mobile");
 		}
 
 		@include vpTablet {
-			@include webpBackground(var(--bgWebpTablet), var(--bgTablet));
-
-			@include retina {
-				@include webpBackground(var(--bgWebpTablet2x), var(--bgTablet2x));
-			}
+			@include retinalBackground("Tablet");
 		}
 
 		@include vpDesktop {
-			@include webpBackground(var(--bgWebpDesktop), var(--bgDesktop));
-
-			@include retina {
-				@include webpBackground(var(--bgWebpDesktop2x), var(--bgDesktop2x));
-			}
+			@include retinalBackground("Desktop");
 		}
 	} @else {
-		@include webpBackground(var(--bgWebpMobile), var(--bgMobile));
-
-		@include retina {
-			@include webpBackground(var(--bgWebpMobile2x), var(--bgMobile2x));
-		}
+		@include retinalBackground("Mobile");
 	}
 }
 

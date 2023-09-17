@@ -1,12 +1,10 @@
 {% macro setBg(set, immediately = false) %}
-	{% set ext = set.ext ?? 'jpg' -%}
+	{% set ext = set.ext ?? 'webp' -%}
 
 	{{ not immediately ? 'data-lazy-'}}style="{{- '--bgMobile: url(\'../images/' ~ set.filename ~ '.' ~ ext ~ '\');' -}}
 
 	{% if ext != 'svg' %}
 		{{- '--bgMobile2x: url(\'../images/' ~ set.filename ~ '@2x.' ~ ext ~ '\');' -}}
-		{{- '--bgWebpMobile: url(\'../images/' ~ set.filename ~ '.webp\');' -}}
-		{{- '--bgWebpMobile2x: url(\'../images/' ~ set.filename ~ '@2x.webp\');' -}}
 	{% endif -%}
 
 	{%- if set.adaptive %}
@@ -15,12 +13,7 @@
 
 		{% if ext != 'svg' %}
 			{{- '--bgTablet2x: url(\'../images/' ~ set.filename ~ '-tablet@2x.' ~ ext ~ '\');' -}}
-			{{- '--bgWebpTablet: url(\'../images/' ~ set.filename ~ '-tablet.webp\');' -}}
-			{{- '--bgWebpTablet2x: url(\'../images/' ~ set.filename ~ '-tablet@2x.webp\');' -}}
-
 			{{- '--bgDesktop2x: url(\'../images/' ~ set.filename ~ '-desktop@2x.' ~ ext ~ '\');' -}}
-			{{- '--bgWebpDesktop: url(\'../images/' ~ set.filename ~ '-desktop.webp\');' -}}
-			{{- '--bgWebpDesktop2x: url(\'../images/' ~ set.filename ~ '-desktop@2x.webp\');' -}}
 		{% endif %}
 	{% endif -%}
 

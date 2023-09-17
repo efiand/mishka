@@ -3,7 +3,6 @@ import buildSprite from './gulp/buildSprite.js';
 import buildStyles from './gulp/buildStyles.js';
 import cleanDist from './gulp/cleanDist.js';
 import copyStatic from './gulp/copyStatic.js';
-import createWebp from './gulp/createWebp.js';
 import gulp from 'gulp';
 import lintEditorconfig from './gulp/lintEditorconfig.js';
 import lintScripts from './gulp/lintScripts.js';
@@ -18,11 +17,9 @@ const { parallel, series } = gulp;
 
 export const lint = parallel(lintEditorconfig, lintScripts, lintStyles, series(buildSvelteSsr, processLayouts));
 
-const compile = series(
+export const build = series(
 	cleanDist,
 	parallel(lint, saveIcons, saveImages, saveSvg),
 	parallel(buildScripts, buildSprite, buildStyles, copyStatic)
 );
-
-export const build = series(compile, createWebp);
-export default series(compile, startWatch);
+export default series(build, startWatch);

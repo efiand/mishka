@@ -1,25 +1,5 @@
 <picture class="Picture {{ bemMix }}">
-	{% set ext = ext ?? 'jpg' %}
-
-	{% if not devMode and ext != 'svg' %}
-		{% if adaptive %}
-			<source
-				type="image/webp"
-				media="(min-width: {{ Breakpoint.DESKTOP }}px)"
-				srcset="{{ rootPath }}images/{{ filename }}-desktop.webp 1x, {{ rootPath }}images/{{ filename }}-desktop@2x.webp 2x"
-			/>
-			<source
-				type="image/webp"
-				media="(min-width: {{ Breakpoint.TABLET }}px)"
-				srcset="{{ rootPath }}images/{{ filename }}-tablet.webp 1x, {{ rootPath }}images/{{ filename }}-tablet@2x.webp 2x"
-			/>
-		{% endif %}
-
-		<source
-			type="image/webp"
-			srcset="{{ rootPath }}images/{{ filename }}.webp 1x, {{ rootPath }}images/{{ filename }}@2x.webp 2x"
-		/>
-	{% endif %}
+	{% set ext = ext ?? 'webp' %}
 
 	{% if adaptive %}
 		{% if ext != 'svg' %}
